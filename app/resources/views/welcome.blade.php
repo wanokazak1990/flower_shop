@@ -14,11 +14,10 @@
 
 
         @viteReactRefresh
-        @vite('resources/js/app.jsx')
+        @vite('resources/js/app.js')
 
     </head>
     <body class="antialiased">
-        <h1>HELLO WORLD</h1>
         <div id="app"></div>
     </body>
 </html>
