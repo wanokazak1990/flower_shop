@@ -1,0 +1,82 @@
+.header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid black;
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+    }
+    &__logo {
+        max-width: 90px;
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        &-link {
+            color: #000;
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 30px;
+            transition: .3s all;
+            &:hover {
+                opacity: .5;
+            }
+        }
+    }
+    &__account {
+        font-size: 16px;
+        color: rgb(7, 121, 197);
+        transition: .3s all;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__burger {
+        display: none;
+    }
+}
+@media (max-width: 798px) {
+    .header {
+        &__list {
+            gap: 0px;
+            &-link {
+                padding: 15px 10px;
+            }
+        }
+    }
+}
+@media (max-width: 606px) {
+    .header {
+        &__account {
+            display: none;
+        }
+        &__logo {
+            max-width: 60px;
+        }
+        &__nav {
+            display: none;
+        }
+        &__burger {
+            display: flex;
+        }
+    }
+}

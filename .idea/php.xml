@@ -1,64 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="ChangeListManager">
-    <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/public/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_import.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_container.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_banner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_contacts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_products.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/BannerSection/BannerSection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ContactsSection/ContactsSection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/store/AsyncActions/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/store/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/app.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/app/composer.json</pharConfigPath>
-    <execution>
-      <executable path="composer" />
-    </execution>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/app/.env" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/bin/php">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/app/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/app/vendor/sebastian/cli-parser" />
@@ -174,75 +126,16 @@
       <path value="$PROJECT_DIR$/app/vendor/sebastian/lines-of-code" />
     </include_path>
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
-}</component>
-  <component name="ProjectId" id="2Z4XJchbMk5qL0Qu5Fol2b89zTj" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "frontend",
-    "last_opened_file_path": "/home/programmist/Рабочий стол/Проекты/flower_shop/app/resources/js/src/assets/images/icons",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/programmist/PhpStorm-232.10072.32/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/resources/js/src/assets/images/icons" />
-      <recent name="$PROJECT_DIR$/app/resources/js/src" />
-      <recent name="$PROJECT_DIR$/app/resources/js" />
-      <recent name="$PROJECT_DIR$/app/resources/src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/public/images/bg" />
-      <recent name="$PROJECT_DIR$/app/public" />
-      <recent name="$PROJECT_DIR$/app/resources/js/src" />
-      <recent name="$PROJECT_DIR$/app/resources/js" />
-    </key>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings configuration_file_path="$PROJECT_DIR$/app/phpunit.xml" custom_loader_path="$PROJECT_DIR$/app/vendor/autoload.php" use_configuration_file="true" />
+    </phpunit_settings>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner configuration_file="$PROJECT_DIR$/app/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
-      <method v="2" />
-    </configuration>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="" />
-      <created>1701682255794</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1701682255794</updated>
-      <workItem from="1701682257831" duration="458000" />
-      <workItem from="1701685221726" duration="16389000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
   </component>
 </project>
