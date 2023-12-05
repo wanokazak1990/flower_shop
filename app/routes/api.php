@@ -36,6 +36,15 @@ Route::prefix('admin')->group(function(){
      * [DELETE] [api/admin/products/{int product_id}]    DELETE PRODUCT
      */
     Route::resource('products',  \App\Http\Controllers\Api\V1\Product\ProductController::class)->except(['edit', 'create']);
+
+    /**
+     * [GET]    [api/admin/deliveries]                      GET ALL DELIVERIES
+     * [GET]    [api/admin/deliveries/{int delivery_id}]    GET DELIVERY BY ID
+     * [POST]   [api/admin/deliveries/]                     STORE DELIVERY [name = string]
+     * [PATCH]  [api/admin/deliveries/{int delivery_id}]    UPDATE DELIVERY BY ID [name = string]
+     * [DELETE] [api/admin/deliveries/{int delivery_id}]    DELETE DELIVERY
+     */
+    Route::resource('deliveries',  \App\Http\Controllers\Api\V1\Delivery\DeliveryController::class)->except(['edit', 'create']);
 });
 
 Route::prefix('')->group(function(){
@@ -45,5 +54,6 @@ Route::prefix('')->group(function(){
     });
 
     Route::get('products', '\App\Http\Controllers\Api\V1\Front\ProductController@list');
+    Route::get('deliveries', '\App\Http\Controllers\Api\V1\Delivery\DeliveryController@index');
 });
 
