@@ -7,6 +7,12 @@ import {ProductAdmin} from "../components/adminComponents/ProductsComponents/Pro
 import {ProductListAdmin} from "../components/adminComponents/ProductsComponents/ProductListAdmin.jsx";
 import {CreateProductStrategy} from "../components/adminComponents/ProductsComponents/interfaces/CreateStrategy.js";
 import {PatchProductStrategy} from "../components/adminComponents/ProductsComponents/interfaces/PatchStrategy.js";
+import {DeliveryAdminList} from "../components/adminComponents/DeliveryAdminComponents/DeliveryAdminList.jsx";
+import {DeliveryAdminEditor} from "../components/adminComponents/DeliveryAdminComponents/DeliveryAdminEditor.jsx";
+import {
+    CreateDeliveryStrategy
+} from "../components/adminComponents/DeliveryAdminComponents/interfaces/CreateStrategy.js";
+import {PatchDeliveryStrategy} from "../components/adminComponents/DeliveryAdminComponents/interfaces/PatchStrategy.js";
 export const AdminPageApp = () => {
     const [activeTab, setActiveTab] = useState(0);
     const [entityId, setEntityId] = useState(0);
@@ -18,6 +24,11 @@ export const AdminPageApp = () => {
     const productsStrategy = {
         create: CreateProductStrategy,
         patch: PatchProductStrategy
+    }
+
+    const deliverysStrategy = {
+        create: CreateDeliveryStrategy,
+        patch: PatchDeliveryStrategy
     }
     const changeTab = (num, event) => {
         event.preventDefault();
@@ -66,13 +77,10 @@ export const AdminPageApp = () => {
                         <a href="#" className="admin__list-link" onClick={(e) => changeTab(3, e)}>Создать товар</a>
                     </li>
                     <li className="admin__list-item">
-                        <a href="#" className="admin__list-link">Аккаунт</a>
+                        <a href="#" className="admin__list-link" onClick={(e) => changeTab(4, e)}>Службы доставки</a>
                     </li>
                     <li className="admin__list-item">
-                        <a href="#" className="admin__list-link">Службы доставки</a>
-                    </li>
-                    <li className="admin__list-item">
-                        <a href="#" className="admin__list-link">Создать службу</a>
+                        <a href="#" className="admin__list-link" onClick={(e) => changeTab(5, e)}>Создать службу</a>
                     </li>
                 </ul>
             </div>
@@ -81,6 +89,8 @@ export const AdminPageApp = () => {
                 {activeTab === 1 && <ProductCategory entityId={entityId} strategy={categoriesStrategy[entityMethod]}/>}
                 {activeTab === 2 && <ProductListAdmin getEntityId={getEntityId}/>}
                 {activeTab === 3 && <ProductAdmin entityId={entityId} strategy={productsStrategy[entityMethod]}/>}
+                {activeTab === 4 && <DeliveryAdminList getEntityId={getEntityId}/>}
+                {activeTab === 5 && <DeliveryAdminEditor entityId={entityId} strategy={deliverysStrategy[entityMethod]}/>}
                 {/*<CreateProduct v-if="activeTab === 2"/>*/}
                 {/*<template v-if="activeTab === 3">*/}
                 {/*    <ProductsList v-for="category in categories" :key="category.id" :category="category" @changeProduct="changeProduct"/>*/}
