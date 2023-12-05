@@ -29,6 +29,7 @@
     "@vitejs/plugin-react": "^4.2.0",
     "file-loader": "^6.2.0",
     "react-router-dom": "^6.20.1",
+    "rsuite": "^5.46.1",
     "vite-plugin-svgr": "^4.2.0"
   },
   "name": "flower_shop",
