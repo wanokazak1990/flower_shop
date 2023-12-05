@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export const HeaderApp = () => {
     return (
         <header className="header">
@@ -8,8 +10,13 @@ export const HeaderApp = () => {
                     </a>
                     <nav className="header__nav">
                         <ul className="header__list">
-                            <li className="header__list-item"><a href="#" className="header__list-link">Цветы</a></li>
-                            <li className="header__list-item"><a href="#" className="header__list-link">Букеты</a></li>
+                            <li className="header__list-item">
+                                <Link to={`admin`}>Цветы</Link>
+                                {/*<a href="#" className="header__list-link">Цветы</a>*/}
+                            </li>
+                            <li className="header__list-item">
+                                <a href="#" className="header__list-link">Букеты</a>
+                            </li>
                         </ul>
                     </nav>
                     <a href="#" className="header__account">

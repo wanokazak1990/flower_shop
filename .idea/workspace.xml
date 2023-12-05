@@ -5,33 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/public/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/App.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_import.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_container.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_banner.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_contacts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_products.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/BannerSection/BannerSection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ContactsSection/ContactsSection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/store/AsyncActions/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/store/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/store/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_admin-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/app.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/vite.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_import.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_import.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +167,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "frontend",
-    "last_opened_file_path": "/home/programmist/Рабочий стол/Проекты/flower_shop/app/resources/js/src/assets/images/icons",
+    "last_opened_file_path": "/home/programmist/Рабочий стол/vue-typescript",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -227,7 +206,8 @@
       <option name="presentableId" value="Default" />
       <updated>1701682255794</updated>
       <workItem from="1701682257831" duration="458000" />
-      <workItem from="1701685221726" duration="16389000" />
+      <workItem from="1701685221726" duration="17046000" />
+      <workItem from="1701757306452" duration="2934000" />
     </task>
     <servers />
   </component>
