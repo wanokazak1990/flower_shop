@@ -1,7 +1,7 @@
 version: '2'
 
 networks:
-  shop:
+  shop-flow:
   
 services:
 
@@ -21,7 +21,7 @@ services:
     links: 
       - php-fpm
     networks: 
-      - shop
+      - shop-flow
   
   ###################
   # PHP-FPM
@@ -41,7 +41,7 @@ services:
       - "DB_PORT=3306"
       - "DB_HOST=mysql"
     networks: 
-      - shop
+      - shop-flow
 
   
   ###################
@@ -66,7 +66,7 @@ services:
     ports:
       - "33066:3306"
     networks: 
-      - shop
+      - shop-flow
 
 
   ###################
@@ -84,7 +84,7 @@ services:
     - "3002:3002"
     - "3003:3003"
     networks: 
-      - shop
+      - shop-flow
 
   ###################
   # PHPMYADMIN
@@ -99,7 +99,7 @@ services:
         MYSQL_ROOT_PASSWORD: secret
         MYSQL_PORT_3306_TCP_ADDR: mysql
     networks: 
-      - shop
+      - shop-flow
 
 
       
