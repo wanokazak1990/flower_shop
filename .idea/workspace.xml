@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_admin-page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/api/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_spinner.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/SpinnerApp/SpinnerApp.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/CategoryList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/ProductCategory.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/interfaces/CategoryStrategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/interfaces/CreateStrategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/interfaces/PatchStrategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/useProductCategory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductCardAdmin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/interfaces/CreateStrategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/interfaces/PatchStrategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/interfaces/ProductAdminStrategy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/useProductsAdmin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_import.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/_import.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_admin-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_admin-page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/images/mysql/ca.pem" beforeDir="false" afterPath="$PROJECT_DIR$/docker/images/mysql/ca.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/images/mysql/client-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/docker/images/mysql/client-cert.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/images/mysql/public_key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/docker/images/mysql/public_key.pem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker/images/mysql/server-cert.pem" beforeDir="false" afterPath="$PROJECT_DIR$/docker/images/mysql/server-cert.pem" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,8 +187,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "frontend",
-    "last_opened_file_path": "/home/programmist/Рабочий стол/vue-typescript",
+    "git-widget-placeholder": "Merging dev",
+    "last_opened_file_path": "/home/programmist/Рабочий стол/Проекты/react-typescript",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -185,6 +206,7 @@
       <recent name="$PROJECT_DIR$/app/resources/src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents" />
       <recent name="$PROJECT_DIR$/app/public/images/bg" />
       <recent name="$PROJECT_DIR$/app/public" />
       <recent name="$PROJECT_DIR$/app/resources/js/src" />

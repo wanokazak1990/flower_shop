@@ -1,12 +1,12 @@
 import {Link} from "react-router-dom";
-
+import logoImage from "../../assets/images/icons/logo.svg"
 export const HeaderApp = () => {
     return (
         <header className="header">
             <div className="container">
                 <div className="header__wrapper">
                     <a href="#" className="header__logo">
-                        <img src="/logo.svg" alt="logo"/>
+                        <img src={logoImage} alt="logo"/>
                     </a>
                     <nav className="header__nav">
                         <ul className="header__list">

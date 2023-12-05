@@ -1,4 +1,35 @@
+import {CategoryList} from "../components/adminComponents/CategoriesComponents/CategoryList.jsx";
+import {useState} from "react";
+import {ProductCategory} from "../components/adminComponents/CategoriesComponents/ProductCategory.jsx";
+import {CreateCategoryStrategy} from "../components/adminComponents/CategoriesComponents/interfaces/CreateStrategy.js";
+import {PatchCategoryStrategy} from "../components/adminComponents/CategoriesComponents/interfaces/PatchStrategy.js";
+import {ProductAdmin} from "../components/adminComponents/ProductsComponents/ProductAdmin.jsx";
+import {ProductListAdmin} from "../components/adminComponents/ProductsComponents/ProductListAdmin.jsx";
+import {CreateProductStrategy} from "../components/adminComponents/ProductsComponents/interfaces/CreateStrategy.js";
+import {PatchProductStrategy} from "../components/adminComponents/ProductsComponents/interfaces/PatchStrategy.js";
 export const AdminPageApp = () => {
+    const [activeTab, setActiveTab] = useState(0);
+    const [entityId, setEntityId] = useState(0);
+    const [entityMethod, setEntityMethod] = useState('create');
+    const categoriesStrategy = {
+        create: CreateCategoryStrategy,
+        patch: PatchCategoryStrategy
+    }
+    const productsStrategy = {
+        create: CreateProductStrategy,
+        patch: PatchProductStrategy
+    }
+    const changeTab = (num, event) => {
+        event.preventDefault();
+        setActiveTab(num);
+        setEntityMethod('create');
+        setEntityId(0);
+    }
+    const getEntityId = ({id, method, activeTab}) => {
+        setEntityMethod(method);
+        setEntityId(id);
+        setActiveTab(activeTab);
+    }
     return (
         <section className="admin">
             <a href="#" className="admin__burger">
@@ -23,16 +54,16 @@ export const AdminPageApp = () => {
                         </a>
                     </li>
                     <li className="admin__list-item">
-                        <a href="#" className="admin__list-link">Категории</a>
+                        <a href="#" className="admin__list-link" onClick={(e) => changeTab(0, e)}>Категории</a>
                     </li>
                     <li className="admin__list-item">
-                        <a href="#" className="admin__list-link">Создать категорию</a>
+                        <a href="#" className="admin__list-link" onClick={(e) => changeTab(1, e)}>Создать категорию</a>
                     </li>
                     <li className="admin__list-item">
-                        <a href="#" className="admin__list-link">Создать товар</a>
+                        <a href="#" className="admin__list-link" onClick={(e) => changeTab(2, e)}>Товары</a>
                     </li>
                     <li className="admin__list-item">
-                        <a href="#" className="admin__list-link">Товары</a>
+                        <a href="#" className="admin__list-link" onClick={(e) => changeTab(3, e)}>Создать товар</a>
                     </li>
                     <li className="admin__list-item">
                         <a href="#" className="admin__list-link">Аккаунт</a>
@@ -46,13 +77,14 @@ export const AdminPageApp = () => {
                 </ul>
             </div>
             <div className="admin__content">
-                {/*<CategoryList v-if="activeTab ===  0" @setIdCategory="setIdCategory"/>*/}
-                {/*<ProductCategoryCreate v-if="activeTab === 1"/>*/}
+                {activeTab === 0 && <CategoryList getEntityId={getEntityId}/>}
+                {activeTab === 1 && <ProductCategory entityId={entityId} strategy={categoriesStrategy[entityMethod]}/>}
+                {activeTab === 2 && <ProductListAdmin getEntityId={getEntityId}/>}
+                {activeTab === 3 && <ProductAdmin entityId={entityId} strategy={productsStrategy[entityMethod]}/>}
                 {/*<CreateProduct v-if="activeTab === 2"/>*/}
                 {/*<template v-if="activeTab === 3">*/}
                 {/*    <ProductsList v-for="category in categories" :key="category.id" :category="category" @changeProduct="changeProduct"/>*/}
                 {/*</template>*/}
-                {/*<ProductCategoryChange :categoryId="categoryId" v-if="activeTab === 4"/>*/}
                 {/*<ChangeProduct :productId="productId" v-if="activeTab === 5"/>*/}
                 {/*<AccountChange v-if="activeTab === 6"/>*/}
                 {/*<DeliveryList v-if="activeTab === 7" @setIdDelivery="setIdDelivery"/>*/}
