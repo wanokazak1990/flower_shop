@@ -37,3 +37,13 @@ Route::prefix('admin')->group(function(){
      */
     Route::resource('products',  \App\Http\Controllers\Api\V1\Product\ProductController::class)->except(['edit', 'create']);
 });
+
+Route::prefix('')->group(function(){
+    Route::prefix('cart')->group(function(){
+        Route::put('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@append');
+        Route::delete('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@reduce');
+    });
+
+    Route::get('products', '\App\Http\Controllers\Api\V1\Front\ProductController@list');
+});
+

@@ -2,13 +2,14 @@
 
 namespace App\Repositories\Product;
 
+use App\Http\Resources\Product\ProductListResource;
 use \App\Models\Product;
 
 Class ProductRepository
 {
     public function getAll()
     {
-        $products = Product::get();
+        $products = Product::with('category')->get();
 
         return $products;
     }
@@ -27,5 +28,18 @@ Class ProductRepository
     public function delete(Product $product)
     {
         $product->delete();
+    }
+
+    public function getGroupProduct()
+    {
+        $groups = $this->getAll()->groupBy(function($item, $key) {
+            return $item->category->name;
+        })->map(function($itemGroup) {
+            return $itemGroup->map(function($itemProduct) {
+                return new ProductListResource($itemProduct);
+            });
+        });
+
+        return $groups;
     }
 }
