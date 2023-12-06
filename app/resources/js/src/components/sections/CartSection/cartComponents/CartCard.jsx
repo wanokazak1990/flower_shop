@@ -13,9 +13,16 @@ export const CartCard = (props) => {
             setCounter(+counter + 1);
         }
     }
-    const decrement = () => {
-        if (counter !== 1) {
+    const delToCart = async () => {
+        const response = await Fetch.delete(`cart/${id}`);
+        if (response.success) {
+            dispatch({type: "ADD_TO_CART", payload: response.data.count});
             setCounter(+counter - 1);
+        }
+    }
+    const decrement = async () => {
+        if (counter !== 1) {
+            await delToCart();
         }
     }
     const increment = async () => {
