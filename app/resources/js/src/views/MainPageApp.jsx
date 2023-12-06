@@ -4,8 +4,10 @@ import {ProductsSection} from "../components/sections/ProductsSection/ProductsSe
 import {ContactsSection} from "../components/sections/ContactsSection/ContactsSection.jsx";
 import {useCallback, useEffect, useState} from "react";
 import Fetch from "../api/api.js";
+import {useDispatch} from "react-redux";
 export const MainPageApp = () => {
     const [products, setProducts] = useState([])
+    const dispatch = useDispatch();
     const getProducts = useCallback(async ()=> {
         const response = await Fetch.get('products');
         if (response.success) {
@@ -16,9 +18,16 @@ export const MainPageApp = () => {
             setProducts(list)
         }
     }, [])
+    const getCartCounter = useCallback(async () => {
+        const response = await Fetch.get('cart/count');
+        console.log(response);
+    }, [])
     useEffect(()=>{
         getProducts()
     }, [getProducts]);
+    useEffect(()=>{
+        getCartCounter()
+    }, [getCartCounter]);
     return (
         <>
             <HeaderApp/>
