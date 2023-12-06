@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\V1\Category;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Category\CategoryCollection;
+use App\Http\Resources\Category\CategoryItemResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -17,40 +19,26 @@ class CategoryController extends Controller
 
     public function index()
     {
-        $categories = $this->repo->getAll();
-
-        return response()->json([
-            'data' => $categories,
-            'success' => 1,
-        ]);
+        return new CategoryCollection($this->repo->getAll());
     }
 
     public function show(Category $category)
     {
-        return response()->json([
-            'data' => $category,
-            'success' => 1,
-        ]);
+        return new CategoryItemResource($category);
     }
 
     public function store(Category $category, Request $request)
     {
         $this->repo->save($category, $request->all());
 
-        return response()->json([
-            'data' => $category,
-            'success' => 1,
-        ]);
+        return new CategoryItemResource($category);
     }
 
     public function update(Category $category, Request $request)
     {
         $this->repo->save($category, $request->all());
 
-        return response()->json([
-            'data' => $category,
-            'success' => 1,
-        ]);
+        return new CategoryItemResource($category);
     }
 
     public function destroy(Category $category)

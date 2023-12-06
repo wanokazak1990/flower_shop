@@ -18,7 +18,10 @@ Class CartStorage
         if(!self::$_instance instanceof CartStorage)
         {
             self::$_instance = new self();
-            self::$_instance->data = (session()->get('cart'));
+            if(session()->get('cart'))
+                self::$_instance->data = (session()->get('cart'));
+            else
+                self::$_instance->data = [];
         }
         return self::$_instance;
     }
