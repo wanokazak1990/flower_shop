@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/{any}', function () {
-//    return view('welcome');
-//});
-Route::view('/{patch?}', 'welcome');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 //Route::get('/test', 'App\Http\Controllers\Api\V1\Cart\CartController@test');
