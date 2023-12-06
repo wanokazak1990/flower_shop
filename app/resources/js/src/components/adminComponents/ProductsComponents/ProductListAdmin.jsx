@@ -30,6 +30,11 @@ export const ProductListAdmin = (props) => {
     }
     return (
         <>
+            {products.length === 0 &&
+                <div className="admin__products">
+                    <div className="admin__subtitle">Список товаров пуст</div>
+                </div>
+            }
             {products.length !== 0 &&
                 <div className="admin__products">
                     <div className="admin__subtitle">Категория:</div>

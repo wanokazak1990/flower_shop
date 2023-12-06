@@ -11,9 +11,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
         &-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
+            svg {
+                display: flex;
+                height: 49px;
+            }
         }
         &-title {
             font-size: 20px;
