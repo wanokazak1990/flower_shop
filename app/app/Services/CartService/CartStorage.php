@@ -42,6 +42,7 @@ Class CartStorage
                 'id' => $product->id,
                 'price' => $product->price,
                 'name' => $product->name,
+                'img' => $product->image_url,
                 'count' => 1,
             ];
         }
