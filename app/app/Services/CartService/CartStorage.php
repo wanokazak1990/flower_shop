@@ -64,14 +64,20 @@ Class CartStorage
         return $this->data;
     }
 
-    public function totalPrice()
+    public function totalPrice($productId = '')
     {
         $price = 0;
-
-        foreach($this->data as $item)
+        if($productId)
         {
-            $price+=($item['count']*$item['price']);
+            $price = $this->data[$productId]['count']*$this->data[$productId]['price'];
         }
+        else{
+            foreach($this->data as $item)
+            {
+                $price+=($item['count']*$item['price']);
+            }
+        }
+
 
         return $price;
     }

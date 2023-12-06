@@ -20,7 +20,11 @@ class CartController extends Controller
         $cart->storage->append($productId);
 
         return response()->json([
-            'data' => $cart->storage->get(),
+            'data' => [
+                'count' => $cart->storage->totalCount(),
+                'total_cart_price' => $cart->storage->totalPrice(),
+                'product_total_price' => $cart->storage->totalPrice($productId),
+            ],
             'success' => 1,
         ]);
     }
@@ -30,7 +34,21 @@ class CartController extends Controller
         $cart->storage->reduce($productId);
 
         return response()->json([
-            'data' => $cart->storage->get(),
+            'data' => [
+                'count' => $cart->storage->totalCount(),
+                'total_cart_price' => $cart->storage->totalPrice(),
+                'product_total_price' => $cart->storage->totalPrice($productId),
+            ],
+            'success' => 1,
+        ]);
+    }
+
+    public function count(\App\Services\CartService\Cart $cart)
+    {
+        return response()->json([
+            'data' => [
+                'count' => $cart->storage->totalCount(),
+            ],
             'success' => 1,
         ]);
     }
