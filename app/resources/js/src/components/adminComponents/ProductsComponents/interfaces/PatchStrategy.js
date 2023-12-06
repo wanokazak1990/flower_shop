@@ -3,6 +3,6 @@ import {CreateProductStrategy} from "./CreateStrategy.js";
 
 export class PatchProductStrategy {
     async send(body, id) {
-        return await Fetch.changeUpload(`admin/categories/${id}`, body);
+        return await Fetch.changeUpload(`admin/products/${id}`, body);
     }
 }

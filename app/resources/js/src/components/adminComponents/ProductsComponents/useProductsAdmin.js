@@ -41,6 +41,11 @@ export const useProductsAdmin = (strategy, id = 0) => {
                 setProductDescription(response.data.description);
                 setImgUrl(response.data.img);
                 setIsLoading(false);
+                setFileList([{
+                    name: 'image',
+                    fileKey: 1,
+                    url: response.data.img
+                }])
             }
         } else {
             setIsLoading(false);
@@ -51,13 +56,13 @@ export const useProductsAdmin = (strategy, id = 0) => {
     }, [getProduct]);
 
     const getProductBody = () => {
-        return {
-            name: productName,
-            price: productPrice,
-            description: productDescription,
-            category_id: categoryId,
-            img: fileList[0]
-        }
+        const formData = new FormData();
+        formData.append('name', productName);
+        formData.append('price', productPrice);
+        formData.append('description', productDescription);
+        formData.append('category_id', `${categoryId}`);
+        formData.append('img', fileList[0].blobFile);
+        return formData;
     }
     const send = async () => {
         if (productName !== '' && productPrice !== '' && productDescription !== '' && fileList.length !== 0) {
