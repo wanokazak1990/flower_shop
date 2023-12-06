@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/store/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/store/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/CartCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/CartCard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
