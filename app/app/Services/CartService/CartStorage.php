@@ -70,7 +70,7 @@ Class CartStorage
     public function totalPrice($productId = '')
     {
         $price = 0;
-        if($productId)
+        if($productId && isset($this->data[$productId]))
         {
             $price = $this->data[$productId]['count']*$this->data[$productId]['price'];
         }
