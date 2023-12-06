@@ -52,6 +52,7 @@ Route::prefix('')->group(function(){
         Route::get('', '\App\Http\Controllers\Api\V1\Cart\CartController@index');
         Route::put('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@append');
         Route::delete('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@reduce');
+        Route::get('count', '\App\Http\Controllers\Api\V1\Cart\CartController@count');
     });
 
     Route::get('products', '\App\Http\Controllers\Api\V1\Front\ProductController@list');
