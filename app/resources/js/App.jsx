@@ -14,11 +14,16 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import {ProductAppPage} from "./src/views/ProductAppPage.jsx";
+import {CartPageApp} from "./src/views/CartPageApp.jsx";
 export default function App() {
     const router = createBrowserRouter([
         {
             path: "/admin",
             element: <AdminPageApp/>
+        },
+        {
+            path: "/cart",
+            element: <CartPageApp/>
         },
         {
             path: "/product/:id",
