@@ -62,6 +62,7 @@ export const useProductsAdmin = (strategy, id = 0) => {
         formData.append('description', productDescription);
         formData.append('category_id', `${categoryId}`);
         formData.append('img', fileList[0].blobFile);
+        if (id !== 0) formData.append('_method', 'patch');
         return formData;
     }
     const send = async () => {

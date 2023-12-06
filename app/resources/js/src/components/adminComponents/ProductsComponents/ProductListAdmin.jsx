@@ -37,7 +37,6 @@ export const ProductListAdmin = (props) => {
             }
             {products.length !== 0 &&
                 <div className="admin__products">
-                    <div className="admin__subtitle">Категория:</div>
                     {!isLoading &&
                         <div className="admin__products-grid">
                             {products.map(product => {

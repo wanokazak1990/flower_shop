@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/interfaces/PatchStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/interfaces/PatchStrategy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/useProductsAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/useProductsAdmin.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
