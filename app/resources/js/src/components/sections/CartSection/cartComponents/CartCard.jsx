@@ -18,7 +18,7 @@ export const CartCard = (props) => {
         if (response.success) {
             dispatch({type: "ADD_TO_CART", payload: response.data.count});
             setCounter(+counter - 1);
-            if (+counter === 0) {
+            if (+counter === 1) {
                 props.delProductToCart(id);
             }
         }
@@ -37,14 +37,8 @@ export const CartCard = (props) => {
                 </div>
                 <div className="cart__card-body">
                     <div className="cart__card-title">{name}</div>
-                    {/*<div className="cart__card-description"></div>*/}
                 </div>
                 <div className="cart__card-counter">
-                    <a href="#" className="cart__card-trash" title="Удалить товар">
-                        <svg width="30" height="37" viewBox="0 0 30 37" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fillRule="evenodd" clipRule="evenodd" d="M8.07692 17.3438C8.07692 16.7055 8.59385 16.1875 9.23077 16.1875C9.86769 16.1875 10.3846 16.7055 10.3846 17.3438V31.2188C10.3846 31.8582 9.86769 32.375 9.23077 32.375C8.59385 32.375 8.07692 31.8582 8.07692 31.2188V17.3438ZM13.8462 17.3438C13.8462 16.7055 14.3631 16.1875 15 16.1875C15.6369 16.1875 16.1538 16.7055 16.1538 17.3438V31.2188C16.1538 31.8582 15.6369 32.375 15 32.375C14.3631 32.375 13.8462 31.8582 13.8462 31.2188V17.3438ZM19.6154 17.3438C19.6154 16.7055 20.1323 16.1875 20.7692 16.1875C21.4062 16.1875 21.9231 16.7055 21.9231 17.3438V31.2188C21.9231 31.8582 21.4062 32.375 20.7692 32.375C20.1323 32.375 19.6154 31.8582 19.6154 31.2188V17.3438ZM2.30769 32.375C2.30769 34.9292 4.37423 37 6.92308 37H23.0769C25.6258 37 27.6923 34.9292 27.6923 32.375V13.875H2.30769V32.375ZM18.4615 4.625H11.5385V3.46875C11.5385 2.82934 12.0554 2.3125 12.6923 2.3125H17.3077C17.9446 2.3125 18.4615 2.82934 18.4615 3.46875V4.625ZM27.6923 4.625H20.7692V2.3125C20.7692 1.036 19.7354 0 18.4615 0H11.5385C10.2646 0 9.23077 1.036 9.23077 2.3125V4.625H2.30769C1.03385 4.625 0 5.661 0 6.9375V9.25C0 10.5265 1.03268 11.5613 2.30653 11.5625H27.6946C28.9673 11.5613 30 10.5265 30 9.25V6.9375C30 5.661 28.9662 4.625 27.6923 4.625Z" fill="#B90000"/>
-                        </svg>
-                    </a>
                     <div className="product-page__counter">
                         <button className="minus" onClick={() => decrement()}>
                             <svg width="35" height="5" viewBox="0 0 35 5" fill="none" xmlns="http://www.w3.org/2000/svg">

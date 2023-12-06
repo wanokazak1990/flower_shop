@@ -32,6 +32,13 @@ export const ProductAppPage = () => {
     useEffect(()=>{
         getProduct()
     }, [getProduct]);
+    const getCartCounter = useCallback(async () => {
+        const response = await Fetch.get('cart/count');
+        dispatch({type: "ADD_TO_CART", payload: response.data.count});
+    }, [])
+    useEffect(()=>{
+        getCartCounter()
+    }, [getCartCounter]);
     const addToCart = async (id) => {
         dispatch({type: "ADD_TO_CART", payload: id});
         const response = await Fetch.put(`cart/${id}`)
