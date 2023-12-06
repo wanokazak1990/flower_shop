@@ -21,7 +21,9 @@ class CartController extends Controller
 
         return response()->json([
             'data' => [
-                'count' => $cart->storage->totalCount()
+                'count' => $cart->storage->totalCount(),
+                'total_cart_price' => $cart->storage->totalPrice(),
+                'product_total_price' => $cart->storage->totalPrice($productId),
             ],
             'success' => 1,
         ]);
@@ -33,7 +35,9 @@ class CartController extends Controller
 
         return response()->json([
             'data' => [
-                'count' => $cart->storage->totalCount()
+                'count' => $cart->storage->totalCount(),
+                'total_cart_price' => $cart->storage->totalPrice(),
+                'product_total_price' => $cart->storage->totalPrice($productId),
             ],
             'success' => 1,
         ]);
@@ -43,7 +47,7 @@ class CartController extends Controller
     {
         return response()->json([
             'data' => [
-                'count' => $cart->storage->totalCount()
+                'count' => $cart->storage->totalCount(),
             ],
             'success' => 1,
         ]);
