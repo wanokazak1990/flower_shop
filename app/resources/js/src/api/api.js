@@ -22,6 +22,14 @@ class Fetch {
             console.log(e)
         }
     }
+    static async put(url, body) {
+        try {
+            const response = await instance.put(url, body)
+            return response.data;
+        } catch (e) {
+            console.log(e)
+        }
+    }
     static async patch(url, body) {
         try {
             const response = await instance.patch(url, body)

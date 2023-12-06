@@ -5,7 +5,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import {Provider} from "react-redux";
 import {store} from "./src/store/index.js";
 import './src/assets/scss/style.scss';
-import { BrowserRouter } from "react-router-dom";
 import {MainPageApp} from "./src/views/MainPageApp.jsx";
 import {AdminPageApp} from "./src/views/AdminPageApp.jsx";
 import {
@@ -14,11 +13,16 @@ import {
     createHashRouter,
     RouterProvider,
 } from "react-router-dom";
+import {ProductAppPage} from "./src/views/ProductAppPage.jsx";
 export default function App() {
-    const router = createHashRouter([
+    const router = createBrowserRouter([
         {
             path: "/admin",
             element: <AdminPageApp/>
+        },
+        {
+            path: "/product/:id",
+            element: <ProductAppPage/>
         },
         {
             path: "/",
@@ -29,9 +33,6 @@ export default function App() {
         <>
             <Provider store={store}>
                 <RouterProvider router={router} />
-                {/*<BrowserRouter>*/}
-                {/*    <MainPageApp/>*/}
-                {/*</BrowserRouter>*/}
                 <ToastContainer
                     position="top-right"
                     autoClose={5000}

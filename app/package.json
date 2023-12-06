@@ -31,7 +31,9 @@
     "file-loader": "^6.2.0",
     "material-ui-popup-state": "^5.0.10",
     "react-router-dom": "^6.20.1",
+    "react-singleton-hook": "^4.0.1",
     "rsuite": "^5.46.1",
+    "use-global-hook": "^0.3.0",
     "vite-plugin-svgr": "^4.2.0"
   },
   "name": "flower_shop",
