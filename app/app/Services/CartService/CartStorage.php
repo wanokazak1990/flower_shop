@@ -62,6 +62,8 @@ Class CartStorage
 
     public function get()
     {
+        $arr = $this->data;
+        $arr['total_price'] = $this->totalPrice();
         return $this->data;
     }
 
