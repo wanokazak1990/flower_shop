@@ -48,7 +48,7 @@ Route::prefix('admin')->group(function(){
 });
 
 Route::prefix('')->group(function(){
-    Route::prefix('cart')->group(function(){
+    Route::prefix('cart')->middleware('session.start')->group(function(){
         Route::get('', '\App\Http\Controllers\Api\V1\Cart\CartController@index');
         Route::put('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@append');
         Route::delete('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@reduce');
