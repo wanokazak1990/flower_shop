@@ -14,8 +14,15 @@ Class ProductRepository
         return $products;
     }
 
-    public function save(Product $product, array $data)
+    public function save(Product $product, array $data, $file)
     {
+        if($file instanceof \Illuminate\Http\UploadedFile)
+        {
+            $fileName = time().'.'.$file->extension();
+            $file->storeAs('public/images', $fileName);
+            $data['img'] = $fileName;
+        }
+
         $product->fill([
             'name'          => $data['name']        ?? $product->name,
             'price'         => $data['price']       ?? $product->price,

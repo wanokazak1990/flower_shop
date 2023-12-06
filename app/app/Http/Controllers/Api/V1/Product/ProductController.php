@@ -26,7 +26,7 @@ class ProductController extends Controller
 
     public function store(Product $product, Request $request)
     {
-        $this->repo->save($product, $request->all());
+        $this->repo->save($product, $request->all(), $request->file('img'));
 
         return new ProductItemResource($product);
     }
@@ -38,7 +38,7 @@ class ProductController extends Controller
 
     public function update(Product $product, Request $request)
     {
-        $this->repo->save($product, $request->all());
+        $this->repo->save($product, $request->all(), $request->file('img'));
 
         return new ProductItemResource($product);
     }

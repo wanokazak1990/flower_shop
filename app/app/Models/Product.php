@@ -15,4 +15,9 @@ class Product extends Model
     {
         return $this->hasOne(\App\Models\Category::class, 'id', 'category_id');
     }
+
+    public function getImageURLAttribute()
+    {
+        return asset('storage/images/'.$this->img);
+    }
 }
