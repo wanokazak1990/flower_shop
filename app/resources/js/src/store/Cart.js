@@ -1,11 +1,11 @@
 const defaultState = {
-    ids: []
+    count: 0
 }
 
 export const cartReducer = (state = defaultState, action) => {
     switch (action.type) {
         case "ADD_TO_CART":
-            return {...state, ids: [...state.ids, ...[action.payload]]};
+            return {...state, count: action.payload};
         default:
             return state;
     }

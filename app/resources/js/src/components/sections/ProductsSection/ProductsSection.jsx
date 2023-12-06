@@ -6,9 +6,10 @@ export const ProductsSection = (props) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const addToCart = async (id) => {
-        dispatch({type: "ADD_TO_CART", payload: id});
         const response = await Fetch.put(`cart/${id}`)
-        console.log(response)
+        if (response.success) {
+            dispatch({type: "ADD_TO_CART", payload: response.data.count});
+        }
     }
     const openProduct = (id) => {
         navigate(`/product/${id}`);

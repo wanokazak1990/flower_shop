@@ -28,7 +28,7 @@ export const HeaderApp = () => {
                         <svg width="42" height="46" viewBox="0 0 42 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11 21.5V11.5C11 5.97715 15.4771 1.5 21 1.5C26.5228 1.5 31 5.97715 31 11.5V21.5M11 14H31C38.5 14 41 23.7248 41 27.75C41 42.8148 36.9915 45.25 21 45.25C5.00845 45.25 1 42.8148 1 27.75C1 23.7248 3.5 14 11 14Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
-                        <span className="header__cart-count">{cart.ids.length}</span>
+                        <span className="header__cart-count">{cart.count}</span>
                     </a>
                     <a href="#" className="header__account">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
