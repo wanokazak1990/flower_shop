@@ -20,7 +20,7 @@ export const MainPageApp = () => {
     }, [])
     const getCartCounter = useCallback(async () => {
         const response = await Fetch.get('cart/count');
-        console.log(response);
+        dispatch({type: "ADD_TO_CART", payload: response.data.count});
     }, [])
     useEffect(()=>{
         getProducts()
