@@ -61,7 +61,7 @@ export const useProductsAdmin = (strategy, id = 0) => {
     }
     const send = async () => {
         if (productName !== '' && productPrice !== '' && productDescription !== '' && fileList.length !== 0) {
-            const response = await productAdminStrategy.send(getProductBody, id);
+            const response = await productAdminStrategy.send(getProductBody(), id);
             if (response.success) {
                 if (id === 0) {
                     toast.success("Товар успешно создан");
