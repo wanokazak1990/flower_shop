@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_product-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_product-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/CartCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/CartCard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

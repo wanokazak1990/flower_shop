@@ -6,6 +6,9 @@ import {SpinnerApp} from "../../SpinnerApp/SpinnerApp.jsx";
 export const CartSection = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const delProductToCart = (id) => {
+        setProducts(products.filter())
+    }
     const getProducts = useCallback(async ()=> {
         const response = await Fetch.get('cart');
         if (response.success) {
