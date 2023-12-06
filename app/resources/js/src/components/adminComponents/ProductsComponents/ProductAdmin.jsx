@@ -29,6 +29,7 @@ export const ProductAdmin = (props) => {
         imgUrl,
         isLoading
     } = useProductsAdmin(new props.strategy, props.entityId);
+    const [disabledUpload, setDisabledUpload] = useState(false);
     useEffect(()=>{
         if (props.entityId === 0) {
             setProductName('');
@@ -37,14 +38,21 @@ export const ProductAdmin = (props) => {
             setFileList([]);
         }
     }, [props.entityId]);
+    useEffect(()=>{
+        if (fileList.length !== 0) {
+            setDisabledUpload(true)
+        } else {
+            setDisabledUpload(false)
+        }
+    }, [fileList]);
     return (
         <div className="admin__products">
             <div className="admin__title">{props.entityId === 0 ? 'Создание продукта' : 'Изменение продукта'}</div>
             {!isLoading &&
                 <div className="admin__form">
-                    {props.entityId !== 0 &&
-                        <img className="admin__form-image" src={imgUrl} alt="img"/>
-                    }
+                    {/*{props.entityId !== 0 &&*/}
+                    {/*    <img className="admin__form-image" src={imgUrl} alt="img"/>*/}
+                    {/*}*/}
                     {props.entityId === 0 &&
                         <p className="admin__form-label" style={{ marginBottom: '0px'}}>
                             Чтобы создать товар сперва нужно создать категорию
@@ -103,11 +111,20 @@ export const ProductAdmin = (props) => {
                     </FormControl>
                     <div>
                         <p className="admin__form-label">Поле для загрузки картинки товара</p>
-                        <Uploader draggable fileList={fileList} action="" multiple={false} autoUpload={false} onChange={setFileList}>
-                            <div style={{ height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                <span>Click or Drag files to this area to upload</span>
-                            </div>
-                        </Uploader>
+                        {/*<Uploader draggable fileList={fileList} action="" multiple={false} autoUpload={false} onChange={setFileList}>*/}
+                        {/*    <div style={{ height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>*/}
+                        {/*        <span>Click or Drag files to this area to upload</span>*/}
+                        {/*    </div>*/}
+                        {/*</Uploader>*/}
+                        <Uploader
+                            disabled={disabledUpload}
+                            listType="picture-text"
+                            defaultFileList={fileList}
+                            action=""
+                            multiple={false}
+                            autoUpload={false}
+                            onChange={setFileList}
+                        />
                     </div>
                     <Button variant="contained" onClick={() => {
                         send()

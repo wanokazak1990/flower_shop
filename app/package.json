@@ -26,8 +26,10 @@
     "@fontsource/roboto": "^5.0.8",
     "@mui/icons-material": "^5.14.19",
     "@mui/material": "^5.14.19",
+    "@reactuses/core": "^4.0.10",
     "@vitejs/plugin-react": "^4.2.0",
     "file-loader": "^6.2.0",
+    "material-ui-popup-state": "^5.0.10",
     "react-router-dom": "^6.20.1",
     "rsuite": "^5.46.1",
     "vite-plugin-svgr": "^4.2.0"

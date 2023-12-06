@@ -6,15 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_contacts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_contacts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/interfaces/PatchStrategy.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/interfaces/PatchStrategy.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/useProductsAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/useProductsAdmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/ContactsSection/ContactsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ContactsSection/ContactsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,22 +163,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "frontend",
-    "last_opened_file_path": "/home/programmist/Рабочий стол/vue-typescript",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/programmist/PhpStorm-232.10072.32/plugins/javascript-impl/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/programmist/Рабочий стол/vue-typescript&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/programmist/PhpStorm-232.10072.32/plugins/javascript-impl/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/DeliveryAdminComponents" />

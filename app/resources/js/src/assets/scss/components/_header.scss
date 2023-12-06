@@ -58,8 +58,52 @@
         display: flex;
         align-items: center;
         gap: 15px;
+        position: relative;
         &:hover {
             text-decoration: underline;
+        }
+        &-dropdown {
+            display: none;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 130%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+        }
+        &-dropdown.active {
+            display: flex;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+            background: gray;
+            border-radius: 4px;
+            margin-bottom: 0;
+            width: 100%;
+        }
+        &-link {
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+            box-sizing: border-box;
+            color: rgb(7, 121, 197);
+            transition: .3s all;
+            background: #fff;
+            text-decoration: none;
+            &:hover {
+                color: #fff;
+                background: rgb(7, 121, 197);
+                text-decoration: none;
+            }
+        }
+        &_textdecoration {
+            cursor: pointer;
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
     &__burger {
