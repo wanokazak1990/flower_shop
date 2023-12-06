@@ -19,7 +19,7 @@ export const CartCard = (props) => {
             dispatch({type: "ADD_TO_CART", payload: response.data.count});
             setCounter(+counter - 1);
             if (+counter === 0) {
-
+                props.delProductToCart(id);
             }
         }
     }

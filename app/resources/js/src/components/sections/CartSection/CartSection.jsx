@@ -7,7 +7,7 @@ export const CartSection = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const delProductToCart = (id) => {
-        setProducts(products.filter())
+        setProducts(products.filter(prod => prod.id !== id));
     }
     const getProducts = useCallback(async ()=> {
         const response = await Fetch.get('cart');
@@ -35,7 +35,7 @@ export const CartSection = () => {
                         <>
                             <ul className="cart__list">
                                 {products.map(product => {
-                                    return <CartCard key={product.id} product={product}/>
+                                    return <CartCard key={product.id} product={product} delProductToCart={delProductToCart}/>
                                 })}
                             </ul>
                             <div className="cart__final">Итого: </div>
