@@ -58,7 +58,7 @@ class Fetch {
         try {
             const configg = {
                 data: body,
-                method: 'patch',
+                method: 'post',
                 url: `/api/${url}`,
                 headers: {
                     'Content-Type': 'multipart/form-data',
