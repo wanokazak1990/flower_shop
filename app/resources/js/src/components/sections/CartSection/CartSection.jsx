@@ -14,6 +14,7 @@ export const CartSection = () => {
     const [visibleCash, setVisibleCash] = useState(false);
     const [cashLink, setCashLink] = useState('');
     const delProductToCart = (id) => {
+
         setProducts(products.filter(prod => prod.id !== id));
     }
     const getProducts = useCallback(async ()=> {
@@ -47,6 +48,7 @@ export const CartSection = () => {
         setVisibleForm(true);
         setVisibleButton(false);
     }
+
     return (
         <section className="cart">
             <div className="container">
