@@ -96,4 +96,14 @@ Class CartStorage
 
         return $count;
     }
+
+    public function erase($productId = '')
+    {
+        if($productId)
+            unset($this->data[$productId]);
+        else
+            $this->data = [];
+
+        $this->syncSession();
+    }
 }

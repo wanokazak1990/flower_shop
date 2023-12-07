@@ -52,4 +52,17 @@ class CartController extends Controller
             'success' => 1,
         ]);
     }
+
+    public function erase($productId, \App\Services\CartService\Cart $cart)
+    {
+        $cart->storage->erase($productId);
+
+        return response()->json([
+            'data' => [
+                'count' => $cart->storage->totalCount(),
+                'total_cart_price' => $cart->storage->totalPrice(),
+            ],
+            'success' => 1,
+        ]);
+    }
 }

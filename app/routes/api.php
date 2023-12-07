@@ -51,6 +51,7 @@ Route::prefix('')->group(function(){
     Route::prefix('cart')->middleware('session.start')->group(function(){
         Route::get('', '\App\Http\Controllers\Api\V1\Cart\CartController@index');
         Route::put('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@append');
+        Route::delete('/erase/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@erase');
         Route::delete('/{productId}', '\App\Http\Controllers\Api\V1\Cart\CartController@reduce');
         Route::get('count', '\App\Http\Controllers\Api\V1\Cart\CartController@count');
     });

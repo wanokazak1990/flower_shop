@@ -24,6 +24,8 @@ class ClientOrderController extends Controller
 
         $file = \App\Services\Order\OrderFile::generatePayDoc($order);
 
+        $cart->storage->erase();
+
         return response()->json([
             'data' => [
                 'file' => $file,
