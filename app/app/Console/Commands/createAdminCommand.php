@@ -28,10 +28,10 @@ class createAdminCommand extends Command
     {
         $user = \App\Models\User::where('email', 'admin@admin.ru')->first();
 
-        if($user->id)
+        if($user !== null)
             exit("Админ уже создан \n");
 
-        $user->create([
+        \App\Models\User::create([
             'email' => 'admin@admin.ru',
             'name' => 'admin',
             'password' => Hash::make(env('ADMIN_PASSWORD')),
