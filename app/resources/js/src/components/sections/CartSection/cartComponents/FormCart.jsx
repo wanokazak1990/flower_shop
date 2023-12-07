@@ -102,7 +102,7 @@ export const FormCart = (props) => {
                 />
                 <button type="submit" className="cart__form-btn">Заказать</button>
             </form>
-            {isLoading && <SpinnerApp className="spinner_absolute"/>}
+            {isLoading && <SpinnerApp/>}
         </>
     );
 }

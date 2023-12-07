@@ -48,7 +48,7 @@ export const ProductListAdmin = (props) => {
                     }
                 </div>
             }
-            {isLoading && <SpinnerApp className="spinner_absolute"/>}
+            {isLoading && <SpinnerApp/>}
         </>
     );
 }

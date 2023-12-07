@@ -1,9 +1,10 @@
+import {Loader, Placeholder} from "rsuite";
+
 export const SpinnerApp = () => {
     return (
-        <div className="spinner">
-            <div className="bounce1"></div>
-            <div className="bounce2"></div>
-            <div className="bounce3"></div>
+        <div style={{position: "relative"}}>
+            <Placeholder.Paragraph rows={15} />
+            <Loader backdrop content="loading..." size="lg" center={true} vertical />
         </div>
     );
 }

@@ -1,20 +1,23 @@
 import {Link} from "react-router-dom";
 import logoImage from "../../assets/images/icons/logo.svg"
 import {MobileMenuApp} from "../MobileMenu/MobileMenuApp.jsx";
-import {useEffect, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import {useSelector} from "react-redux";
 import {Modal} from "../Modal/Modal.jsx";
+import {useClickOutside} from "@reactuses/core";
+
 export const HeaderApp = () => {
     const [dropdown, setDropdown] = useState('');
     const [activeMenu, setActiveMenu] = useState('');
     const cart = useSelector(state => state.cart);
+    const auth = useSelector(state => state.auth);
+    const modalRef = useRef(null);
     const openDropdownMenu = () => {
-        if (dropdown === 'active') {
-            setDropdown('');
-        } else {
-            setDropdown('active');
-        }
+        setDropdown('active');
     }
+    useClickOutside(modalRef, () => {
+        setDropdown('');
+    });
     const openMenu = (e) => {
         e.preventDefault();
         setActiveMenu('active')
@@ -36,44 +39,48 @@ export const HeaderApp = () => {
                         </svg>
                         <span className="header__cart-count">{cart.count}</span>
                     </Link>
-                    <Link to={'/login'} className="header__account">
-                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clipPath="url(#clip0_6_1038)">
-                                <path d="M12.5 13.5208C15.7964 13.5208 18.4687 10.8485 18.4687 7.55209C18.4687 4.25564 15.7964 1.58334 12.5 1.58334C9.20355 1.58334 6.53125 4.25564 6.53125 7.55209C6.53125 10.8485 9.20355 13.5208 12.5 13.5208Z" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
-                                <path d="M1.5625 24.4583L1.94792 22.3229C2.40323 19.8567 3.70806 17.628 5.63574 16.0238C7.56342 14.4196 9.99214 13.5414 12.5 13.5417C15.0108 13.5423 17.4419 14.4235 19.37 16.0318C21.2981 17.6401 22.6011 19.8737 23.0521 22.3438L23.4375 24.4792" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_6_1038">
-                                    <rect width="25" height="25" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        Войти
-                    </Link>
-                    <div className="header__account header__account_textdecoration" onClick={openDropdownMenu}>
-                        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clipPath="url(#clip0_6_1038)">
-                                <path d="M12.5 13.5208C15.7964 13.5208 18.4687 10.8485 18.4687 7.55209C18.4687 4.25564 15.7964 1.58334 12.5 1.58334C9.20355 1.58334 6.53125 4.25564 6.53125 7.55209C6.53125 10.8485 9.20355 13.5208 12.5 13.5208Z" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
-                                <path d="M1.5625 24.4583L1.94792 22.3229C2.40323 19.8567 3.70806 17.628 5.63574 16.0238C7.56342 14.4196 9.99214 13.5414 12.5 13.5417C15.0108 13.5423 17.4419 14.4235 19.37 16.0318C21.2981 17.6401 22.6011 19.8737 23.0521 22.3438L23.4375 24.4792" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_6_1038">
-                                    <rect width="25" height="25" fill="white"/>
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        Рубцов С.
-                        <div className={`header__account-dropdown ${dropdown}`}>
-                            <ul className="header__account-list">
-                                <li>
-                                    <a href="#" className="header__account-link" onClick={() => alert('hello')}>Профиль</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="header__account-link">Выйти</a>
-                                </li>
-                            </ul>
+                    {!auth.loggedIn &&
+                        <Link to={'/login'} className="header__account">
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clipPath="url(#clip0_6_1038)">
+                                    <path d="M12.5 13.5208C15.7964 13.5208 18.4687 10.8485 18.4687 7.55209C18.4687 4.25564 15.7964 1.58334 12.5 1.58334C9.20355 1.58334 6.53125 4.25564 6.53125 7.55209C6.53125 10.8485 9.20355 13.5208 12.5 13.5208Z" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
+                                    <path d="M1.5625 24.4583L1.94792 22.3229C2.40323 19.8567 3.70806 17.628 5.63574 16.0238C7.56342 14.4196 9.99214 13.5414 12.5 13.5417C15.0108 13.5423 17.4419 14.4235 19.37 16.0318C21.2981 17.6401 22.6011 19.8737 23.0521 22.3438L23.4375 24.4792" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6_1038">
+                                        <rect width="25" height="25" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Войти
+                        </Link>
+                    }
+                    {auth.loggedIn &&
+                        <div className="header__account header__account_textdecoration" onClick={openDropdownMenu}  ref={modalRef}>
+                            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clipPath="url(#clip0_6_1038)">
+                                    <path d="M12.5 13.5208C15.7964 13.5208 18.4687 10.8485 18.4687 7.55209C18.4687 4.25564 15.7964 1.58334 12.5 1.58334C9.20355 1.58334 6.53125 4.25564 6.53125 7.55209C6.53125 10.8485 9.20355 13.5208 12.5 13.5208Z" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
+                                    <path d="M1.5625 24.4583L1.94792 22.3229C2.40323 19.8567 3.70806 17.628 5.63574 16.0238C7.56342 14.4196 9.99214 13.5414 12.5 13.5417C15.0108 13.5423 17.4419 14.4235 19.37 16.0318C21.2981 17.6401 22.6011 19.8737 23.0521 22.3438L23.4375 24.4792" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6_1038">
+                                        <rect width="25" height="25" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            Рубцов С.
+                            <div className={`header__account-dropdown ${dropdown}`}>
+                                <ul className="header__account-list">
+                                    <li>
+                                        <a href="#" className="header__account-link" onClick={() => alert('hello')}>Профиль</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" className="header__account-link">Выйти</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
+                    }
                     <a href="#" className="header__burger" onClick={(e) => openMenu(e)}>
                         <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.58179 32.1781H37.6363" stroke="black" strokeWidth="2" strokeLinecap="round"/>

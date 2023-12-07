@@ -63,7 +63,7 @@ export const ProductAppPage = () => {
                     </div>
                 </div>
             }
-            {isLoading && <SpinnerApp className="spinner_absolute"/>}
+            {isLoading && <SpinnerApp/>}
             <ContactsSection/>
         </>
     );
