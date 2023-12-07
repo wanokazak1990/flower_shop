@@ -124,6 +124,21 @@
             text-align: right;
         }
     }
+    &__cash {
+        &-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+            img {
+                max-width: 352px;
+                width: 100%;
+            }
+        }
+        a {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 @media (max-width: 1022px) {
     .cart {

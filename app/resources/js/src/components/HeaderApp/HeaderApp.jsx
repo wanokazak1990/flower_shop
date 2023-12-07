@@ -3,8 +3,10 @@ import logoImage from "../../assets/images/icons/logo.svg"
 import {MobileMenuApp} from "../MobileMenu/MobileMenuApp.jsx";
 import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
+import {Modal} from "../Modal/Modal.jsx";
 export const HeaderApp = () => {
     const [dropdown, setDropdown] = useState('');
+    const [activeMenu, setActiveMenu] = useState('');
     const cart = useSelector(state => state.cart);
     const openDropdownMenu = () => {
         if (dropdown === 'active') {
@@ -12,6 +14,13 @@ export const HeaderApp = () => {
         } else {
             setDropdown('active');
         }
+    }
+    const openMenu = (e) => {
+        e.preventDefault();
+        setActiveMenu('active')
+    }
+    const closeMenu = () => {
+        setActiveMenu('')
     }
     return (
         <header className="header">
@@ -65,7 +74,7 @@ export const HeaderApp = () => {
                             </ul>
                         </div>
                     </div>
-                    <a href="#" className="header__burger">
+                    <a href="#" className="header__burger" onClick={(e) => openMenu(e)}>
                         <svg width="40" height="35" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M2.58179 32.1781H37.6363" stroke="black" strokeWidth="2" strokeLinecap="round"/>
                             <path d="M2.58179 17.5H37.6363" stroke="black" strokeWidth="2" strokeLinecap="round"/>
@@ -74,7 +83,9 @@ export const HeaderApp = () => {
                     </a>
                 </div>
             </div>
-            <MobileMenuApp/>
+            <Modal>
+                <MobileMenuApp activeClass={activeMenu} closeMenu={closeMenu}/>
+            </Modal>
         </header>
     );
 }
