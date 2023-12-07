@@ -52,7 +52,7 @@ export const CategoryList = (props) => {
                     }
                 </ul>
             }
-            {isLoading && <SpinnerApp className="spinner_absolute"/>}
+            {isLoading && <SpinnerApp/>}
         </div>
     );
 }

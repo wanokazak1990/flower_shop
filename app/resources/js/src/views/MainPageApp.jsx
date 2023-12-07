@@ -5,8 +5,10 @@ import {ContactsSection} from "../components/sections/ContactsSection/ContactsSe
 import {useCallback, useEffect, useState} from "react";
 import Fetch from "../api/api.js";
 import {useDispatch} from "react-redux";
+import {SpinnerApp} from "../components/SpinnerApp/SpinnerApp.jsx";
 export const MainPageApp = () => {
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
     const getProducts = useCallback(async ()=> {
         const response = await Fetch.get('products');
@@ -15,7 +17,8 @@ export const MainPageApp = () => {
             for (const key in response.data) {
                 list.push({title: key, data: response.data[key]})
             }
-            setProducts(list)
+            setProducts(list);
+            setIsLoading(false);
         }
     }, [])
     const getCartCounter = useCallback(async () => {
@@ -32,18 +35,21 @@ export const MainPageApp = () => {
         <>
             <HeaderApp/>
             <BannerSection/>
-            {products.length === 0 &&
+            {!isLoading && products.length === 0 &&
                 <section className="products">
                     <div className="container">
                         <div className="products__title">Товаров нет</div>
                     </div>
                 </section>
             }
-            {products.map((product, index) => {
-                return (
-                    <ProductsSection key={`${product.title}-${index}`} title={product.title} products={product.data}/>
-                );
-            })}
+            {!isLoading &&
+                products.map((product, index) => {
+                    return (
+                        <ProductsSection key={`${product.title}-${index}`} title={product.title} products={product.data}/>
+                    );
+                })
+            }
+            {isLoading && <SpinnerApp/>}
             <ContactsSection/>
         </>
     );

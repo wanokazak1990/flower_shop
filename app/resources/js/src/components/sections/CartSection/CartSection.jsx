@@ -4,6 +4,7 @@ import Fetch from "../../../api/api.js";
 import {SpinnerApp} from "../../SpinnerApp/SpinnerApp.jsx";
 import {FormCart} from "./cartComponents/FormCart.jsx";
 import {CashReceipt} from "./cartComponents/CashReceipt.jsx";
+import { Loader, Placeholder } from 'rsuite';
 
 export const CartSection = () => {
     const [products, setProducts] = useState([]);
@@ -14,7 +15,6 @@ export const CartSection = () => {
     const [visibleCash, setVisibleCash] = useState(false);
     const [cashLink, setCashLink] = useState('');
     const delProductToCart = (id) => {
-
         setProducts(products.filter(prod => prod.id !== id));
     }
     const getProducts = useCallback(async ()=> {
@@ -28,6 +28,7 @@ export const CartSection = () => {
             setTotalPrice(list.reduce((a,b) => {
                 return a + (+b.price * +b.count);
             }, 0));
+            // setTimeout(() => setIsLoading(false), 30000)
             setIsLoading(false);
         }
     }, [])
@@ -77,7 +78,8 @@ export const CartSection = () => {
                             }
                         </>
                     }
-                    {isLoading && <SpinnerApp className="spinner_absolute"/>}
+
+                    {isLoading && <SpinnerApp/>}
                 </div>
             </div>
         </section>

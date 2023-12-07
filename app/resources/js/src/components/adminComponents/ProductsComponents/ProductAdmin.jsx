@@ -132,7 +132,7 @@ export const ProductAdmin = (props) => {
                     >{props.entityId === 0 ? 'Создать продукт' : 'Изменить продукт'}</Button>
                 </div>
             }
-            {isLoading && <SpinnerApp className="spinner_absolute"/>}
+            {isLoading && <SpinnerApp/>}
         </div>
     );
 }

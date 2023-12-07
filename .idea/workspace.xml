@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/views/RegisterApp.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/views/SignInSideApp.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/SpinnerApp/SpinnerApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/SpinnerApp/SpinnerApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/CategoryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/CategoryList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/DeliveryAdminComponents/DeliveryAdminList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/DeliveryAdminComponents/DeliveryAdminList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/FormCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/FormCart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
