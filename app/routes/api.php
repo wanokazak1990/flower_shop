@@ -62,3 +62,8 @@ Route::prefix('')->group(function(){
     Route::post('orders', 'App\Http\Controllers\Api\V1\Order\ClientOrderController');
 });
 
+Route::prefix('auth')->group(function(){
+    Route::post('register', '\App\Http\Controllers\Api\V1\Auth\RegisterController');
+    Route::post('login', '\App\Http\Controllers\Api\V1\Auth\RegisterController');
+});
+
