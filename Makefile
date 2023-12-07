@@ -27,8 +27,8 @@ docker-all-destroy:
 
 #изменить права на каталоги
 perm:
-	sudo chown ${USER}:${USER} ./app -R
-	sudo chmod -R 777 ./app
+	sudo chown ${USER}:${USER} ./app/storage -R
+	sudo chmod -R 777 ./app/storage
 
 ########################################################
 ########################################################
