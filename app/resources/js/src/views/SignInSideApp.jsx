@@ -9,20 +9,29 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {loginUser} from "../store/AsyncActions/users.js";
+import {useDispatch, useSelector} from "react-redux";
 import Fetch from "../api/api.js";
+import { useLocalStorage } from "@reactuses/core";
+import {LOGIN} from "../store/auth.js";
 
 const defaultTheme = createTheme();
 export default function SignInSideApp() {
+    const [value, setValue] = useLocalStorage("userData", null);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        const response = await Fetch.post('auth/login', data);
-        console.log(response)
-        // console.log({
-        //     email: data.get('email'),
-        //     password: data.get('password'),
-        // });
+        const response = await Fetch.post('auth/login', data)
+        if (response.success) {
+            dispatch({type: LOGIN, payload: response.data});
+            const { created_at, email_verified_at, updated_at, ...rest } = response.data;
+            rest.loggedIn = true;
+            setValue(JSON.stringify(rest));
+            navigate('/');
+        }
     };
 
     return (

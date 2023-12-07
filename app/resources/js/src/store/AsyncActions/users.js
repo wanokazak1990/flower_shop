@@ -1,11 +1,13 @@
-// import Fetch from "../../api/api";
-// import {getUsers} from "../auth";
-//
-// export const fetchUsers = (): any => {
-//     return function(dispatch) {
-//         Fetch.get('https://jsonplaceholder.typicode.com/users')
-//             .then(data => {
-//                 dispatch(getUsers(data))
-//             })
-//     }
-// }
+import Fetch from "../../api/api";
+import {login} from "../auth";
+export const loginUser = (body) => {
+    return (dispatch) => {
+        Fetch.post('auth/login', body)
+            .then(response => {
+                if (response.success) {
+                    dispatch(login(response.data))
+                    return response.success;
+                }
+            })
+    }
+}
