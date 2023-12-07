@@ -14,7 +14,7 @@ class LoginController extends Controller
         $email = $request->email;
         $pass = $request->password;
 
-        Auth::attempt([
+        \Auth::attempt([
             'email' => $email,
             'password' => $pass
         ]);
