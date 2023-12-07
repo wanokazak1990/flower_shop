@@ -1,10 +1,13 @@
-import ReactDOM from "react-dom";
-const portal = document.getElementById('menu');
-export const MobileMenuApp = () => {
-    ReactDOM.createPortal(
-        <div className="menu">
+export const MobileMenuApp = (props) => {
+    const { activeClass } = props;
+    const closeMenu = (e) => {
+        e.preventDefault();
+        props.closeMenu();
+    }
+    return (
+        <div className={`menu ${activeClass}`}>
             <div className="menu__wrapper">
-                <a href="#" className="close">
+                <a href="#" className="close" onClick={(e) => closeMenu(e)}>
                     <svg width="389" height="382" viewBox="0 0 389 382" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clipPath="url(#clip0_210_2)">
                             <path d="M595 -206H-205V594H595V-206Z" fill="white"/>
@@ -19,7 +22,6 @@ export const MobileMenuApp = () => {
                     </svg>
                 </a>
             </div>
-        </div>,
-        portal
+        </div>
     )
 }

@@ -8,7 +8,7 @@ import {useCallback, useEffect, useState} from "react";
 import Fetch from "../../../../api/api.js";
 import {SpinnerApp} from "../../../SpinnerApp/SpinnerApp.jsx";
 import {toast} from "react-toastify";
-export const FormCart = () => {
+export const FormCart = (props) => {
     const [deliveries, setDeliveries] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [defaultDelivery, setDefaultDelivery] = useState('');
@@ -47,10 +47,13 @@ export const FormCart = () => {
 
     const sendForm = async (e) => {
         e.preventDefault();
-        if (name === '' && email === '') {
+        if (name === '' || email === '') {
             toast.error("Не все поля заполнены");
         } else {
-            console.log(getOrderBody())
+            const response = await Fetch.post('orders', getOrderBody());
+            if (response.success) {
+                props.getFile(response.data.file);
+            }
         }
 
     }
