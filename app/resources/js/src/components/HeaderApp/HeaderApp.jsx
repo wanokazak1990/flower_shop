@@ -94,9 +94,9 @@ export const HeaderApp = () => {
                             {userName}
                             <div className={`header__account-dropdown ${dropdown}`}>
                                 <ul className="header__account-list">
-                                    <li>
-                                        <a href="#" className="header__account-link" onClick={() => alert('hello')}>Профиль</a>
-                                    </li>
+                                    {/*<li>*/}
+                                    {/*    <a href="#" className="header__account-link" onClick={() => alert('hello')}>Профиль</a>*/}
+                                    {/*</li>*/}
                                     <li>
                                         <a href="#" className="header__account-link" onClick={(e) => logout(e)}>Выйти</a>
                                     </li>
