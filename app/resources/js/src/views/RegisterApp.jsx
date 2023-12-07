@@ -10,18 +10,17 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link} from "react-router-dom";
+import Fetch from "../api/api.js";
 
 const defaultTheme = createTheme();
 export default function RegisterApp() {
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
-            name: data.get('name'),
-            email: data.get('email'),
-            password: data.get('password'),
-            secondPassword: data.get('secondPassword')
-        });
+        if (data.get('password') === data.get('secondPassword')) {
+            const response = await Fetch.post('auth/register', data);
+            console.log(response)
+        }
     };
 
     return (

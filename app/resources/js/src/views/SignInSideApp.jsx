@@ -10,16 +10,19 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {Link} from "react-router-dom";
+import Fetch from "../api/api.js";
 
 const defaultTheme = createTheme();
 export default function SignInSideApp() {
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
+        const response = await Fetch.post('auth/login', data);
+        console.log(response)
+        // console.log({
+        //     email: data.get('email'),
+        //     password: data.get('password'),
+        // });
     };
 
     return (
