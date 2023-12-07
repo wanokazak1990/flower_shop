@@ -10,4 +10,11 @@ Class Cart
     {
         $this->storage = CartStorage::instance();
     }
+
+    public function isEmpty()
+    {
+        if($this->storage->get())
+            return false;
+        return true;
+    }
 }

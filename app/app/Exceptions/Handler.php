@@ -27,4 +27,16 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception)
+    {
+        return response()->json([
+            'message' => $exception->getMessage(),
+            'success' => 0,
+            'error' => implode(', ', [
+                'Фаил где поймал исключение: '.$exception->getFile(),
+                'Cтрока с исключением: '.$exception->getLine(),
+            ])
+        ], 404);
+    }
 }

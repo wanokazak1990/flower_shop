@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Product\ProductItemResource;
 use App\Http\Resources\Product\ProductListCollection;
 use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Http\Requests\Product\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -17,14 +17,14 @@ class ProductController extends Controller
         $this->repo = $repo;
     }
 
-    public function index(Request $request)
+    public function index()
     {
         $products = $this->repo->getAll();
 
         return new ProductListCollection($products);
     }
 
-    public function store(Product $product, Request $request)
+    public function store(Product $product, ProductRequest $request)
     {
         $this->repo->save($product, $request->all(), $request->file('img'));
 
@@ -36,7 +36,7 @@ class ProductController extends Controller
         return new ProductItemResource($product);
     }
 
-    public function update(Product $product, Request $request)
+    public function update(Product $product, ProductRequest $request)
     {
         $this->repo->save($product, $request->all(), $request->file('img'));
 

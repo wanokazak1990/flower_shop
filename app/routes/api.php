@@ -57,5 +57,7 @@ Route::prefix('')->group(function(){
 
     Route::get('products', '\App\Http\Controllers\Api\V1\Front\ProductController@list');
     Route::get('deliveries', '\App\Http\Controllers\Api\V1\Delivery\DeliveryController@index');
+
+    Route::post('orders', 'App\Http\Controllers\Api\V1\Order\ClientOrderController');
 });
 
