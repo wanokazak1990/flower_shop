@@ -6,28 +6,44 @@ import {useCallback, useEffect, useState} from "react";
 import Fetch from "../api/api.js";
 import {useDispatch} from "react-redux";
 import {SpinnerApp} from "../components/SpinnerApp/SpinnerApp.jsx";
+import { useAsyncEffect } from "@reactuses/core";
 export const MainPageApp = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
-    const getProducts = useCallback(async ()=> {
-        const response = await Fetch.get('products');
-        if (response.success) {
-            const list = [];
-            for (const key in response.data) {
-                list.push({title: key, data: response.data[key]})
+    // const getProducts = useCallback(async ()=> {
+    //     const response = await Fetch.get('products');
+    //     if (response.success) {
+    //         const list = [];
+    //         for (const key in response.data) {
+    //             list.push({title: key, data: response.data[key]})
+    //         }
+    //         setProducts(list);
+    //         setIsLoading(false);
+    //     }
+    // }, [])
+    useAsyncEffect(
+        async () => {
+            const response = await Fetch.get('products');
+            if (response.success) {
+                const list = [];
+                for (const key in response.data) {
+                    list.push({title: key, data: response.data[key]})
+                }
+                setProducts(list);
+                setIsLoading(false);
             }
-            setProducts(list);
-            setIsLoading(false);
-        }
-    }, [])
+        },
+        () => {},
+        [],
+    );
     const getCartCounter = useCallback(async () => {
         const response = await Fetch.get('cart/count');
         dispatch({type: "ADD_TO_CART", payload: response.data.count});
     }, [])
-    useEffect(()=>{
-        getProducts()
-    }, [getProducts]);
+    // useEffect(()=>{
+    //     getProducts()
+    // }, [getProducts]);
     useEffect(()=>{
         getCartCounter()
     }, [getCartCounter]);
