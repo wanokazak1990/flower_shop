@@ -6,7 +6,9 @@ import {Provider} from "react-redux";
 import {store} from "./src/store/index.js";
 import './src/assets/scss/style.scss';
 import {MainPageApp} from "./src/views/MainPageApp.jsx";
-import {AdminPageApp} from "./src/views/AdminPageApp.jsx";
+import {AdminPageApp} from "./src/views/AdminPageApp.jsx"
+import SignInSideApp from "./src/views/SignInSideApp.jsx";
+import RegisterApp from "./src/views/RegisterApp.jsx";
 import {
     createBrowserRouter,
     createMemoryRouter,
@@ -24,6 +26,14 @@ export default function App() {
         {
             path: "/cart",
             element: <CartPageApp/>
+        },
+        {
+          path: "/login",
+          element: <SignInSideApp/>
+        },
+        {
+            path: "/register",
+            element: <RegisterApp/>
         },
         {
             path: "/product/:id",

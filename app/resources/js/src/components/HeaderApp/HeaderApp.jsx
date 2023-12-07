@@ -36,7 +36,7 @@ export const HeaderApp = () => {
                         </svg>
                         <span className="header__cart-count">{cart.count}</span>
                     </Link>
-                    <a href="#" className="header__account">
+                    <Link to={'/login'} className="header__account">
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_6_1038)">
                                 <path d="M12.5 13.5208C15.7964 13.5208 18.4687 10.8485 18.4687 7.55209C18.4687 4.25564 15.7964 1.58334 12.5 1.58334C9.20355 1.58334 6.53125 4.25564 6.53125 7.55209C6.53125 10.8485 9.20355 13.5208 12.5 13.5208Z" stroke="#020202" strokeWidth="2" strokeMiterlimit="10"/>
@@ -49,7 +49,7 @@ export const HeaderApp = () => {
                             </defs>
                         </svg>
                         Войти
-                    </a>
+                    </Link>
                     <div className="header__account header__account_textdecoration" onClick={openDropdownMenu}>
                         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_6_1038)">
