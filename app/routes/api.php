@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('admin')->group(function(){
+Route::prefix('admin')->middleware('check.admin')->group(function(){
     /**
      * [GET]    [api/admin/categories]                      GET ALL CATEGORIES
      * [GET]    [api/admin/categories/{int category_id}]    GET CATEGORY BY ID
