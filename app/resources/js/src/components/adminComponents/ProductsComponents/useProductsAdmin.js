@@ -61,8 +61,15 @@ export const useProductsAdmin = (strategy, id = 0) => {
         formData.append('price', productPrice);
         formData.append('description', productDescription);
         formData.append('category_id', `${categoryId}`);
-        formData.append('img', fileList[0].blobFile);
-        if (id !== 0) formData.append('_method', 'patch');
+        if (id !== 0) {
+            formData.append('_method', 'patch');
+            if (fileList[0].hasOwnProperty('blobFile')) {
+                formData.append('img', fileList[0].blobFile);
+            }
+        } else {
+            formData.append('img', fileList[0].blobFile);
+        }
+
         return formData;
     }
     const send = async () => {

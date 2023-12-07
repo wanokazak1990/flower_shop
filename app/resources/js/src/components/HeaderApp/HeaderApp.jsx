@@ -1,9 +1,6 @@
 import {Link} from "react-router-dom";
 import logoImage from "../../assets/images/icons/logo.svg"
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+import {MobileMenuApp} from "../MobileMenu/MobileMenuApp.jsx";
 import {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 export const HeaderApp = () => {
@@ -77,6 +74,7 @@ export const HeaderApp = () => {
                     </a>
                 </div>
             </div>
+            <MobileMenuApp/>
         </header>
     );
 }
