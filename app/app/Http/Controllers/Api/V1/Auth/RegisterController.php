@@ -27,10 +27,13 @@ class RegisterController extends Controller
                 'password' => Hash::make($pass),
             ]);
         elseif(!$tmpUser->password)
-            $user = User::create([
+        {
+            $user = $tmpUser;
+            $user->fill([
                 'name' => $name,
                 'password' => Hash::make($pass),
-            ]);
+            ])->save();
+        }
 
         \Auth::attempt([
             'email' => $email,
