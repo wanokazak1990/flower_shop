@@ -14,6 +14,7 @@ export const ProductsSection = (props) => {
     const openProduct = (id) => {
         navigate(`/product/${id}`);
     }
+
     return (
         <section className="products">
             <div className="container">

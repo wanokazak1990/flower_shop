@@ -75,7 +75,7 @@ export const ProductAdmin = (props) => {
                         value={productDescription}
                         variant="outlined"
                         multiline
-                        maxRows={10}
+                        maxRows={20}
                         onInput={(event) => {
                             setProductDescription(event.target.value);
                         }}

@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/MobileMenu/MobileMenuApp.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/FormCart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_admin-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_admin-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_cart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_products.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/sections/_products.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/useProductsAdmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/useProductsAdmin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/CartCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/CartCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,6 +219,7 @@
       <workItem from="1701757306452" duration="2934000" />
       <workItem from="1701800440213" duration="1335000" />
       <workItem from="1701843078236" duration="4296000" />
+      <workItem from="1701930236043" duration="10262000" />
     </task>
     <servers />
   </component>

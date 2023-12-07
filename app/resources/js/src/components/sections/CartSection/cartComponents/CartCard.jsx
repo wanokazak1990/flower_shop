@@ -1,22 +1,27 @@
 import Fetch from "../../../../api/api.js";
 import {useDispatch} from "react-redux";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export const CartCard = (props) => {
     const dispatch = useDispatch();
     const { img, name, id, price, count } = props.product;
-    const [counter, setCounter] = useState(count);
+    const [counter, setCounter] = useState(+count);
+    const [sum, setSum] = useState(+price * +count);
     const addToCart = async () => {
         const response = await Fetch.put(`cart/${id}`)
         if (response.success) {
             dispatch({type: "ADD_TO_CART", payload: response.data.count});
-            setCounter(+counter + 1);
+            setSum(response.data.product_total_price);
+            props.getFinalPrice(response.data.total_cart_price)
+            setCounter(counter + 1);
         }
     }
     const delToCart = async () => {
         const response = await Fetch.delete(`cart/${id}`);
         if (response.success) {
             dispatch({type: "ADD_TO_CART", payload: response.data.count});
+            setSum(response.data.product_total_price);
+            props.getFinalPrice(response.data.total_cart_price)
             setCounter(+counter - 1);
             if (+counter === 1) {
                 props.delProductToCart(id);
@@ -56,7 +61,7 @@ export const CartCard = (props) => {
                             </svg>
                         </button>
                     </div>
-                    <div className="cart__card-price">Сумма: {price}₽</div>
+                    <div className="cart__card-price">Цена: {sum}₽</div>
                 </div>
             </div>
         </li>
