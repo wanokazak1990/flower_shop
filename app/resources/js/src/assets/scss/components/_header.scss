@@ -3,6 +3,23 @@
     top: 0;
     background: #fff;
     border-bottom: 1px solid black;
+    &__admin {
+        padding: 5px 15px;
+        background: black;
+        &-link {
+            font-size: 16px;
+            color: #fff;
+            transition: .3s all;
+            &:hover {
+                color: #fff;
+                opacity: .5;
+            }
+            &:focus {
+                opacity: .5;
+                color: #fff;
+            }
+        }
+    }
     &__wrapper {
         display: flex;
         align-items: center;

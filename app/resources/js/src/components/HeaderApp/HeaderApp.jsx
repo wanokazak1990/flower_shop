@@ -2,22 +2,34 @@ import {Link} from "react-router-dom";
 import logoImage from "../../assets/images/icons/logo.svg"
 import {MobileMenuApp} from "../MobileMenu/MobileMenuApp.jsx";
 import {useEffect, useRef, useState} from "react";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Modal} from "../Modal/Modal.jsx";
 import {useClickOutside} from "@reactuses/core";
+import { useUserName } from "./useUserName.js";
+import { useLocalStorage } from "@reactuses/core";
 
 export const HeaderApp = () => {
     const [dropdown, setDropdown] = useState('');
     const [activeMenu, setActiveMenu] = useState('');
+    const [userName, setUserName] = useState('');
+    const [role, setRole] = useState(0);
     const cart = useSelector(state => state.cart);
     const auth = useSelector(state => state.auth);
     const modalRef = useRef(null);
+    const dispatch = useDispatch();
     const openDropdownMenu = () => {
         setDropdown('active');
     }
     useClickOutside(modalRef, () => {
         setDropdown('');
     });
+    useEffect(() => {
+        setUserName(useUserName(auth.name));
+    }, [auth.name]);
+    useEffect(() => {
+        console.log(auth)
+        setRole(auth.role);
+    }, [auth.role])
     const openMenu = (e) => {
         e.preventDefault();
         setActiveMenu('active')
@@ -25,8 +37,19 @@ export const HeaderApp = () => {
     const closeMenu = () => {
         setActiveMenu('')
     }
+    const logout = async (e) => {
+        e.preventDefault();
+        dispatch({type: "LOGOUT"});
+    }
     return (
         <header className="header">
+            {role === 1 &&
+                <div className="header__admin">
+                    <Link to={'/admin'} className="header__admin-link">
+                        Редактировать сайт
+                    </Link>
+                </div>
+            }
             <div className="container">
                 <div className="header__wrapper">
                     <Link to={'/'} className="header__logo">
@@ -68,14 +91,14 @@ export const HeaderApp = () => {
                                     </clipPath>
                                 </defs>
                             </svg>
-                            Рубцов С.
+                            {userName}
                             <div className={`header__account-dropdown ${dropdown}`}>
                                 <ul className="header__account-list">
                                     <li>
                                         <a href="#" className="header__account-link" onClick={() => alert('hello')}>Профиль</a>
                                     </li>
                                     <li>
-                                        <a href="#" className="header__account-link">Выйти</a>
+                                        <a href="#" className="header__account-link" onClick={(e) => logout(e)}>Выйти</a>
                                     </li>
                                 </ul>
                             </div>

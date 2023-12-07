@@ -1,24 +1,38 @@
 const defaultState = {
     loggedIn: false,
-    token: '',
     name: '',
+    email: '',
     id: 0,
-    role: '',
+    role: 0,
 }
 
-const GET_USERS = 'GET_USERS';
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
+const GET_USER = 'GET_USER'
 export const authReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case GET_USERS:
-            console.log(action.payload)
-            return state;
-        case "LOGIN":
-            return {...state, loggedIn: true}
-        case "LOGOUT":
-            return {...state, loggedIn: false}
+        case LOGIN:
+            return {
+                ...state,
+                loggedIn: true,
+                name: action.payload.name,
+                email: action.payload.email,
+                id: action.payload.id,
+                role: action.payload.role
+            }
+        case LOGOUT:
+            localStorage.removeItem("userData");
+            return {
+                ...state,
+                loggedIn: false,
+                name: '',
+                email: '',
+                id: 0,
+                role: 0
+            }
         default:
             return state;
     }
 }
 
-export const getUsers = (payload) => ({type: GET_USERS, payload})
+export const login = (payload) => ({type: LOGIN, payload})
