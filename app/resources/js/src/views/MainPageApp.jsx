@@ -7,6 +7,8 @@ import Fetch from "../api/api.js";
 import {useDispatch} from "react-redux";
 import {SpinnerApp} from "../components/SpinnerApp/SpinnerApp.jsx";
 import { useAsyncEffect } from "@reactuses/core";
+import {useCheckAuth} from "../customHooks/useCheckAuth.js";
+
 export const MainPageApp = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -30,6 +32,7 @@ export const MainPageApp = () => {
         () => {},
         [],
     );
+    useCheckAuth();
     return (
         <>
             <HeaderApp/>

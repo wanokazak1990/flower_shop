@@ -5,10 +5,11 @@ import {useCallback, useEffect} from "react";
 import Fetch from "../api/api.js";
 import {useDispatch} from "react-redux";
 import { useAsyncEffect } from "@reactuses/core";
+import {useCheckAuth} from "../customHooks/useCheckAuth.js";
 
 export const CartPageApp = () => {
     const dispatch = useDispatch();
-
+    useCheckAuth();
     useAsyncEffect(
         async () => {
             const response = await Fetch.get('cart/count');

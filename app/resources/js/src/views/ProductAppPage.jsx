@@ -4,9 +4,11 @@ import Fetch from "../api/api.js";
 import {ContactsSection} from "../components/sections/ContactsSection/ContactsSection.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import { useAsyncEffect } from "@reactuses/core";
+import {useCheckAuth} from "../customHooks/useCheckAuth.js";
 export const ProductAppPage = () => {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
+    useCheckAuth();
     useAsyncEffect(
         async () => {
             const response = await Fetch.get('cart/count');

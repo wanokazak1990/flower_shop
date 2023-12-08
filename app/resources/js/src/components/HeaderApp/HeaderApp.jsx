@@ -7,6 +7,7 @@ import {Modal} from "../Modal/Modal.jsx";
 import {useClickOutside} from "@reactuses/core";
 import { useUserName } from "./useUserName.js";
 import { useLocalStorage } from "@reactuses/core";
+import Fetch from "../../api/api.js";
 
 export const HeaderApp = () => {
     const [dropdown, setDropdown] = useState('');
@@ -38,7 +39,10 @@ export const HeaderApp = () => {
     }
     const logout = async (e) => {
         e.preventDefault();
-        dispatch({type: "LOGOUT"});
+        const response = await Fetch.get('auth/logout')
+        if (response.success) {
+            dispatch({type: "LOGOUT"});
+        }
     }
     return (
         <header className="header">

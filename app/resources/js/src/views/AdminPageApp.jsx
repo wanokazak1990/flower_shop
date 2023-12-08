@@ -13,12 +13,14 @@ import {CreateDeliveryStrategy} from "../components/adminComponents/DeliveryAdmi
 import {PatchDeliveryStrategy} from "../components/adminComponents/DeliveryAdminComponents/interfaces/PatchStrategy.js";
 import {useSelector} from "react-redux";
 import {Navigate, useNavigate} from "react-router-dom";
+import {useCheckAuth} from "../customHooks/useCheckAuth.js";
 export const AdminPageApp = () => {
     const auth = useSelector(state => state.auth);
     const [activeTab, setActiveTab] = useState(0);
     const [entityId, setEntityId] = useState(0);
     const [entityMethod, setEntityMethod] = useState('create');
     const [activeClass, setActiveClass] = useState('');
+    useCheckAuth();
 
     const categoriesStrategy = {
         create: CreateCategoryStrategy,
