@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_spinner.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/assets/scss/components/_spinner.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/SpinnerApp/SpinnerApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/SpinnerApp/SpinnerApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/CategoryList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/CategoriesComponents/CategoryList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/DeliveryAdminComponents/DeliveryAdminList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/DeliveryAdminComponents/DeliveryAdminList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/adminComponents/ProductsComponents/ProductListAdmin.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/CartSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/FormCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/CartSection/cartComponents/FormCart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/sections/ProductsSection/ProductsSection.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/store/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/store/Cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,7 +207,7 @@
       <workItem from="1701843078236" duration="4296000" />
       <workItem from="1701930236043" duration="10262000" />
       <workItem from="1701960018840" duration="915000" />
-      <workItem from="1702016064017" duration="6962000" />
+      <workItem from="1702016064017" duration="6976000" />
     </task>
     <servers />
   </component>
