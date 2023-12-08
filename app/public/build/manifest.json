@@ -1,0 +1,26 @@
+{
+  "resources/js/app.css": {
+    "file": "assets/app-810258c4.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/logo-935ee847.svg",
+      "assets/cash-receipt-96417b43.png"
+    ],
+    "css": [
+      "assets/app-810258c4.css"
+    ],
+    "file": "assets/app-55c16b8d.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  },
+  "resources/js/src/assets/images/icons/cash-receipt.png": {
+    "file": "assets/cash-receipt-96417b43.png",
+    "src": "resources/js/src/assets/images/icons/cash-receipt.png"
+  },
+  "resources/js/src/assets/images/icons/logo.svg": {
+    "file": "assets/logo-935ee847.svg",
+    "src": "resources/js/src/assets/images/icons/logo.svg"
+  }
+}
