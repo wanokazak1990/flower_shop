@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/resources/js/src/customHooks/useCheckAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/components/HeaderApp/HeaderApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/AdminPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/CartPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/MainPageApp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/ProductAppPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/resources/js/src/views/SignInSideApp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/resources/js/src/views/SignInSideApp.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="b5d9131c-9365-4925-a2c5-6919b543068b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
