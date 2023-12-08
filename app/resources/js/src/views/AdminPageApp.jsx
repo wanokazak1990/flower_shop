@@ -19,7 +19,6 @@ export const AdminPageApp = () => {
     const [entityId, setEntityId] = useState(0);
     const [entityMethod, setEntityMethod] = useState('create');
     const [activeClass, setActiveClass] = useState('');
-    const navigate = useNavigate();
 
     const categoriesStrategy = {
         create: CreateCategoryStrategy,

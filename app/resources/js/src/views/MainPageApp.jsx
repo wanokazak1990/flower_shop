@@ -2,7 +2,7 @@ import {HeaderApp} from "../components/HeaderApp/HeaderApp.jsx";
 import {BannerSection} from "../components/sections/BannerSection/BannerSection.jsx";
 import {ProductsSection} from "../components/sections/ProductsSection/ProductsSection.jsx";
 import {ContactsSection} from "../components/sections/ContactsSection/ContactsSection.jsx";
-import {useCallback, useEffect, useState} from "react";
+import {useState} from "react";
 import Fetch from "../api/api.js";
 import {useDispatch} from "react-redux";
 import {SpinnerApp} from "../components/SpinnerApp/SpinnerApp.jsx";
@@ -11,25 +11,18 @@ export const MainPageApp = () => {
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
-    // const getProducts = useCallback(async ()=> {
-    //     const response = await Fetch.get('products');
-    //     if (response.success) {
-    //         const list = [];
-    //         for (const key in response.data) {
-    //             list.push({title: key, data: response.data[key]})
-    //         }
-    //         setProducts(list);
-    //         setIsLoading(false);
-    //     }
-    // }, [])
     useAsyncEffect(
         async () => {
-            const response = await Fetch.get('products');
-            if (response.success) {
+            const response = await Promise.all([
+                Fetch.get('products'),
+                Fetch.get('cart/count')
+            ])
+            if (response[0].success) {
                 const list = [];
-                for (const key in response.data) {
-                    list.push({title: key, data: response.data[key]})
+                for (const key in response[0].data) {
+                    list.push({title: key, data: response[0].data[key]})
                 }
+                dispatch({type: "ADD_TO_CART", payload: response[1].data.count});
                 setProducts(list);
                 setIsLoading(false);
             }
@@ -37,16 +30,6 @@ export const MainPageApp = () => {
         () => {},
         [],
     );
-    const getCartCounter = useCallback(async () => {
-        const response = await Fetch.get('cart/count');
-        dispatch({type: "ADD_TO_CART", payload: response.data.count});
-    }, [])
-    // useEffect(()=>{
-    //     getProducts()
-    // }, [getProducts]);
-    useEffect(()=>{
-        getCartCounter()
-    }, [getCartCounter]);
     return (
         <>
             <HeaderApp/>
@@ -65,7 +48,11 @@ export const MainPageApp = () => {
                     );
                 })
             }
-            {isLoading && <SpinnerApp/>}
+            {isLoading &&
+                <div className="container">
+                    <SpinnerApp/>
+                </div>
+            }
             <ContactsSection/>
         </>
     );

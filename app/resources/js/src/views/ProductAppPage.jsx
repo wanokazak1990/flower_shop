@@ -1,44 +1,20 @@
-import { useParams } from 'react-router-dom';
 import {HeaderApp} from "../components/HeaderApp/HeaderApp.jsx";
 import {useCallback, useEffect, useState} from "react";
 import Fetch from "../api/api.js";
-import {SpinnerApp} from "../components/SpinnerApp/SpinnerApp.jsx";
 import {ContactsSection} from "../components/sections/ContactsSection/ContactsSection.jsx";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import { useAsyncEffect } from "@reactuses/core";
 export const ProductAppPage = () => {
-    const { id } = useParams();
     const dispatch = useDispatch();
-    const [productName, setProductName] = useState('');
-    const [productPrice, setProductPrice] = useState('');
-    const [productDescription, setProductDescription] = useState('');
-    const [imgUrl, setImgUrl] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
-    // const [sum, setSum] =useState(productPrice);
-    const getProduct = useCallback(async ()=> {
-        if (+id !== 0) {
-            const response = await Fetch.get(`admin/products/${id}`);
-            if (response.success) {
-                setProductName(response.data.name);
-                setProductPrice(response.data.price);
-                setProductDescription(response.data.description);
-                setImgUrl(response.data.img);
-                setIsLoading(false);
-                // setSum(String(count * +response.data.price));
-            }
-        } else {
-            setIsLoading(false);
-        }
-    }, [])
-    useEffect(()=>{
-        getProduct()
-    }, [getProduct]);
-    const getCartCounter = useCallback(async () => {
-        const response = await Fetch.get('cart/count');
-        dispatch({type: "ADD_TO_CART", payload: response.data.count});
-    }, [])
-    useEffect(()=>{
-        getCartCounter()
-    }, [getCartCounter]);
+    const cart = useSelector(state => state.cart);
+    useAsyncEffect(
+        async () => {
+            const response = await Fetch.get('cart/count');
+            dispatch({type: "ADD_TO_CART", payload: response.data.count});
+        },
+        () => {},
+        [],
+    );
     const addToCart = async (id) => {
         dispatch({type: "ADD_TO_CART", payload: id});
         const response = await Fetch.put(`cart/${id}`)
@@ -46,24 +22,30 @@ export const ProductAppPage = () => {
     return (
         <>
             <HeaderApp/>
-            {!isLoading &&
+            {cart.product.name !== '' &&
                 <div className="product-page">
                     <div className="container">
                         <div className="product-page__wrapper">
                             <div className="product-page__image">
-                                <img src={imgUrl} alt="image"/>
+                                <img src={cart.product.img} alt="image"/>
                             </div>
                             <div className="product-page__info">
-                                <div className="product-page__title">{productName}</div>
-                                <div className="product-page__price">{productPrice} р.</div>
-                                <button className="product-page__btn" onClick={() => addToCart(id)}>В корзину</button>
+                                <div className="product-page__title">{cart.product.name}</div>
+                                <div className="product-page__price">{cart.product.price} р.</div>
+                                <button className="product-page__btn" onClick={() => addToCart(cart.product.id)}>В корзину</button>
                             </div>
                         </div>
-                        <div className="product-page__description">{productDescription}</div>
+                        <div className="product-page__description">{cart.product.description}</div>
                     </div>
                 </div>
             }
-            {isLoading && <SpinnerApp/>}
+            {cart.product.name === '' &&
+                <div className="product-page">
+                    <div className="container">
+                        <div className="product-page__title">Товар не существует</div>
+                    </div>
+                </div>
+            }
             <ContactsSection/>
         </>
     );

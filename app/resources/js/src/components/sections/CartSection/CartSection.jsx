@@ -1,10 +1,10 @@
 import {CartCard} from "./cartComponents/CartCard.jsx";
-import {useCallback, useEffect, useState} from "react";
+import {useState} from "react";
 import Fetch from "../../../api/api.js";
 import {SpinnerApp} from "../../SpinnerApp/SpinnerApp.jsx";
 import {FormCart} from "./cartComponents/FormCart.jsx";
 import {CashReceipt} from "./cartComponents/CashReceipt.jsx";
-import { Loader, Placeholder } from 'rsuite';
+import { useAsyncEffect } from "@reactuses/core";
 
 export const CartSection = () => {
     const [products, setProducts] = useState([]);
@@ -14,27 +14,28 @@ export const CartSection = () => {
     const [visibleButton, setVisibleButton] = useState(true);
     const [visibleCash, setVisibleCash] = useState(false);
     const [cashLink, setCashLink] = useState('');
+
     const delProductToCart = (id) => {
         setProducts(products.filter(prod => prod.id !== id));
     }
-    const getProducts = useCallback(async ()=> {
-        const response = await Fetch.get('cart');
-        if (response.success) {
-            const list = [];
-            for (const key in response.data) {
-                list.push(response.data[key]);
+    useAsyncEffect(
+        async () => {
+            const response = await Fetch.get('cart');
+            if (response.success) {
+                const list = [];
+                for (const key in response.data) {
+                    list.push(response.data[key]);
+                }
+                setProducts(list);
+                setTotalPrice(list.reduce((a,b) => {
+                    return a + (+b.price * +b.count);
+                }, 0));
+                setIsLoading(false);
             }
-            setProducts(list);
-            setTotalPrice(list.reduce((a,b) => {
-                return a + (+b.price * +b.count);
-            }, 0));
-            // setTimeout(() => setIsLoading(false), 30000)
-            setIsLoading(false);
-        }
-    }, [])
-    useEffect(()=>{
-        getProducts()
-    }, [getProducts]);
+        },
+        () => {},
+        [],
+    );
     const getFinalPrice = (finalPrice) => {
         setTotalPrice(finalPrice)
     }
@@ -78,7 +79,6 @@ export const CartSection = () => {
                             }
                         </>
                     }
-
                     {isLoading && <SpinnerApp/>}
                 </div>
             </div>

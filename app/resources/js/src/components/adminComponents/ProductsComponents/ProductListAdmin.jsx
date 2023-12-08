@@ -3,20 +3,22 @@ import Fetch from "../../../api/api.js";
 import {SpinnerApp} from "../../SpinnerApp/SpinnerApp.jsx";
 import { ProductCardAdmin } from "./ProductCardAdmin.jsx";
 import {toast} from "react-toastify";
+import {useAsyncEffect} from "@reactuses/core";
 
 export const ProductListAdmin = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [products, setProducts] = useState([]);
-    const getProducts = useCallback(async ()=> {
-        const response = await Fetch.get('admin/products');
-        if (response.success) {
-            setProducts(response.data);
-            setIsLoading(false);
-        }
-    }, [])
-    useEffect(()=>{
-        getProducts()
-    }, [getProducts]);
+    useAsyncEffect(
+        async () => {
+            const response = await Fetch.get('admin/products');
+            if (response.success) {
+                setProducts(response.data);
+                setIsLoading(false);
+            }
+        },
+        () => {},
+        [],
+    );
     const delProd = async (id) => {
         const check = confirm('Вы уверены, что хотите удалить данный продукт?');
         if (check) {
