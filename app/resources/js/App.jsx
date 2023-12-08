@@ -36,12 +36,18 @@ export default function App() {
             element: <RegisterApp/>
         },
         {
-            path: "/product/:id",
-            element: <ProductAppPage/>
+            path: "/product",
+            element: <ProductAppPage/>,
         },
         {
             path: "/",
             element: <MainPageApp/>,
+            children: [
+                {
+                    path: "cart",
+                    element: <CartPageApp/>
+                }
+            ]
         },
     ]);
     return (

@@ -50,9 +50,6 @@ export const ProductAdmin = (props) => {
             <div className="admin__title">{props.entityId === 0 ? 'Создание продукта' : 'Изменение продукта'}</div>
             {!isLoading &&
                 <div className="admin__form">
-                    {/*{props.entityId !== 0 &&*/}
-                    {/*    <img className="admin__form-image" src={imgUrl} alt="img"/>*/}
-                    {/*}*/}
                     {props.entityId === 0 &&
                         <p className="admin__form-label" style={{ marginBottom: '0px'}}>
                             Чтобы создать товар сперва нужно создать категорию
@@ -111,11 +108,6 @@ export const ProductAdmin = (props) => {
                     </FormControl>
                     <div>
                         <p className="admin__form-label">Поле для загрузки картинки товара</p>
-                        {/*<Uploader draggable fileList={fileList} action="" multiple={false} autoUpload={false} onChange={setFileList}>*/}
-                        {/*    <div style={{ height: 200, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>*/}
-                        {/*        <span>Click or Drag files to this area to upload</span>*/}
-                        {/*    </div>*/}
-                        {/*</Uploader>*/}
                         <Uploader
                             disabled={disabledUpload}
                             listType="picture-text"

@@ -4,10 +4,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import TextField from '@mui/material/TextField';
-import {useCallback, useEffect, useState} from "react";
+import {useState} from "react";
 import Fetch from "../../../../api/api.js";
 import {SpinnerApp} from "../../../SpinnerApp/SpinnerApp.jsx";
 import {toast} from "react-toastify";
+import { useAsyncEffect } from "@reactuses/core";
+import { useSetState } from "@reactuses/core";
 export const FormCart = (props) => {
     const [deliveries, setDeliveries] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -15,28 +17,39 @@ export const FormCart = (props) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [deliveryId, setDeliveryId] = useState('');
-    const [nameError, setNameError] = useState(false);
-    const [emailError, setEmailError] = useState(false);
+
+
+    // const [nameError, setNameError] = useState(false);
+    // const [emailError, setEmailError] = useState(false);
+
+    const [nameError, setNameError] = useSetState({nameErr: false});
+    const [emailError, setEmailError] = useSetState({emailErr: false});
+
+    const { nameErr } = nameError;
+    const { emailErr } = emailError;
+
     const handleChange = (event) => {
         setDeliveryId(event.target.value);
     };
 
-    const getDeliveries = useCallback(async ()=> {
-        const response = await Fetch.get('deliveries');
-        if (response.success) {
-            setDeliveries(response.data);
-            if (response.data.length !== 0) {
-                setDefaultDelivery(response.data[0].id);
-                setDeliveryId(response.data[0].id);
-            } else {
-                setDefaultDelivery('Службы доставки не созданы')
+    useAsyncEffect(
+        async () => {
+            const response = await Fetch.get('deliveries');
+            if (response.success) {
+                setDeliveries(response.data);
+                if (response.data.length !== 0) {
+                    setDefaultDelivery(response.data[0].id);
+                    setDeliveryId(response.data[0].id);
+                } else {
+                    setDefaultDelivery('Службы доставки не созданы')
+                }
+                setIsLoading(false);
             }
-            setIsLoading(false);
-        }
-    }, [])
-    useEffect(()=>{
-        getDeliveries()
-    }, [getDeliveries]);
+        },
+        () => {},
+        [],
+    );
+
     const getOrderBody = () => {
         return {
             name: name,
@@ -44,7 +57,6 @@ export const FormCart = (props) => {
             delivery_id: deliveryId
         }
     }
-
     const sendForm = async (e) => {
         e.preventDefault();
         if (name === '' || email === '') {
@@ -55,7 +67,6 @@ export const FormCart = (props) => {
                 props.getFile(response.data.file);
             }
         }
-
     }
     return (
         <>
@@ -80,25 +91,25 @@ export const FormCart = (props) => {
                     id="outlined-basic"
                     fullWidth
                     value={name}
-                    error={nameError}
+                    error={nameErr}
                     label="Ваше ФИО*"
                     variant="outlined"
                     onInput={(event) => {
                         setName(event.target.value);
                     }}
-                    onFocus={() => setNameError(false)}
+                    onFocus={() => setNameError({nameErr: false})}
                 />
                 <TextField
                     id="outlined-basic"
                     fullWidth
                     value={email}
-                    error={emailError}
+                    error={emailErr}
                     label="Ваше email*"
                     variant="outlined"
                     onInput={(event) => {
                         setEmail(event.target.value);
                     }}
-                    onFocus={() => setEmailError(false)}
+                    onFocus={() => setEmailError({emailErr: false})}
                 />
                 <button type="submit" className="cart__form-btn">Заказать</button>
             </form>

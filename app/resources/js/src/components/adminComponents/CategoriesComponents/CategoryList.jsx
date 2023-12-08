@@ -3,20 +3,22 @@ import Fetch from "../../../api/api.js";
 import {useCallback, useEffect, useState} from "react";
 import { SpinnerApp } from "../../SpinnerApp/SpinnerApp.jsx";
 import {toast} from "react-toastify";
+import { useAsyncEffect } from "@reactuses/core";
 
 export const CategoryList = (props) => {
     const [isLoading, setIsLoading] = useState(true);
     const [categories, setCategories] = useState([]);
-    const getCategories = useCallback(async ()=> {
-        const response = await Fetch.get('admin/categories');
-        if (response.success) {
-            setCategories(response.data);
-            setIsLoading(false);
-        }
-    }, [])
-    useEffect(()=>{
-        getCategories()
-    }, [getCategories]);
+    useAsyncEffect(
+        async () => {
+            const response = await Fetch.get('admin/categories');
+            if (response.success) {
+                setCategories(response.data);
+                setIsLoading(false);
+            }
+        },
+        () => {},
+        [],
+    );
 
     const changeCategory = (id) => {
         props.getEntityId({id: id, method: 'patch', activeTab: 1});
