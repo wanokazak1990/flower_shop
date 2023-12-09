@@ -5,11 +5,11 @@ import svgr from "vite-plugin-svgr";
 import * as path from "path";
 
 export default defineConfig({
-    // server: {
-    //     host: '0.0.0.0',
-    //     port: 3002,
-    //     open: false,
-    // },
+    server: {
+        host: '0.0.0.0',
+        port: 3002,
+        open: false,
+    },
     plugins: [
         react(),
         svgr(),
